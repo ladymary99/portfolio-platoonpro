@@ -5,19 +5,13 @@ import myImage from "./assets/logo.png";
 import SelectedWork from "./SelectedWork.jsx";
 import Footer from "./Footer.jsx";
 import "./index.css";
-import TargetCursor from "./TargetCursor";
+import Services from "./Services.jsx";
+
 import VideoSection from "./VideoSection";
 
 function App() {
   return (
     <div className="container">
-      {/* <div>
-        <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-
-        <h1>Hover over the elements below</h1>
-        <button className="cursor-target">Click me!</button>
-        <div className="cursor-target">Hover target</div>
-      </div> */}
       );
       <div className="hero-section">
         {/* Background blur effects */}
@@ -96,35 +90,7 @@ function App() {
           </button>
         </div>
       </div>
-      {/* Services Section */}
-      <div className="services">
-        <div className="services-container">
-          <p className="services-subtitle">(our services)</p>
-
-          <div className="services-list">
-            <div className="dot"></div>
-            <div className="service-item">
-              <span className="service-number">01</span>
-              <h3 className="service-title">Digital Design</h3>
-            </div>
-            {/* <div className="service-dots">
-              <div className="dot"></div>
-            </div> */}
-            <div className="service-item">
-              <span className="service-number">02</span>
-              <h3 className="service-title">Branding</h3>
-              <div className="service-dots"></div>
-            </div>
-
-            <div className="service-item">
-              <span className="service-number">03</span>
-              <h3 className="service-title">Strategy Research</h3>
-              <div className="service-dots"></div>
-            </div>
-            <div className="dot"></div>
-          </div>
-        </div>
-      </div>
+      <Services />
       <SelectedWork />
       <VideoSection />
       <Footer />

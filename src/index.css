@@ -194,11 +194,27 @@ html {
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 13px;
+  height: 13px;
   background: #94a3b8;
   border-radius: 50%;
   margin: 15px;
+}
+
+/* Dots that are absolutely positioned */
+.extra-dot {
+  position: absolute;
+}
+
+.right-dot {
+  top: 17%;
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.bottom-right-dot {
+  bottom: 44px;
+  right: 44px;
 }
 
 /* Responsive design */
