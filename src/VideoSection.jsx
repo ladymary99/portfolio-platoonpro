@@ -2,54 +2,47 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import "./VideoSection.css";
-import b1 from "./assets/b1.jpg";
-import b2 from "./assets/b2.jpg";
-import b3 from "./assets/b3.jpg";
-import b4 from "./assets/b4.jpg";
-import b5 from "./assets/b5.jpg";
+import v1 from "./assets/v1.mp4";
+import v2 from "./assets/v2.mp4";
+import v3 from "./assets/v2.mp4";
+import v4 from "./assets/v1.mp4";
+import v5 from "./assets/v2.mp4";
 
 const healthItems = [
   {
     id: 1,
     title: "Signature Flame Grill",
-    image: b1,
-    thumb: b1,
+    video: v1,
   },
   {
     id: 2,
     title: "Ocean Essence Platter",
-    image: b2,
-    thumb: b2,
+    video: v2,
   },
   {
     id: 3,
     title: "The Garden Table",
-    image: b3,
-    thumb: b3,
+    video: v3,
   },
   {
     id: 4,
     title: "Spice Route Journey",
-    image: b4,
-    thumb: b4,
+    video: v4,
   },
   {
     id: 5,
     title: "Chef’s Signature Picks",
-    image: b5,
-    thumb: b5,
+    video: v5,
   },
   {
     id: 6,
     title: "Golden Hour Desserts",
-    image: b1,
-    thumb: b1,
+    video: v1,
   },
   {
     id: 7,
     title: "Crafted Mixology",
-    image: b1,
-    thumb: b1,
+    video: v2,
   },
 ];
 
@@ -87,23 +80,30 @@ export default function HealthSection() {
             }}
           >
             {activeItem.id === item.id && (
-              <img
-                src={item.thumb}
-                alt=""
+              <video
                 className="thumb"
                 ref={(el) => (thumbRefs.current[index] = el)}
+                src={item.video}
+                muted
+                autoPlay
+                loop
+                playsInline
               />
             )}
             <span>{item.title}</span>
           </div>
         ))}
       </div>
+
       <div className="right-panel">
-        <img
-          src={activeItem.image}
-          alt={activeItem.title}
-          className="main-image"
+        <video
+          src={activeItem.video}
+          className="main-video"
           ref={imageRef}
+          muted
+          autoPlay
+          loop
+          playsInline
         />
       </div>
     </div>

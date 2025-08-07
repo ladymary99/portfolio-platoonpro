@@ -6,7 +6,7 @@
 }
 .portfolio-section {
   color: white;
-  min-height: 300vh;
+  min-height: 100vh;
   height: auto;
 
   margin: 0 40px;
@@ -313,4 +313,63 @@ img {
     width: 80px;
     height: 130px;
   }
+}
+
+/* Portfolio Grid Styles */
+
+.mockup-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.mockup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+/* Hover Overlay */
+.hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.mockup-container:hover .hover-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Hide default cursor over image */
+.mockup-container {
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom Cursor Button */
+.custom-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s ease;
+  white-space: nowrap;
+  z-index: 10;
 }

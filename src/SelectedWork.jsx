@@ -1,22 +1,22 @@
 import React from "react";
 import "./SelectedWork.css";
-import TiltedCard from "./TiltedCard";
 import myImage1 from "./assets/b7.jpg";
 import myImage2 from "./assets/b7.jpg";
 import myImage3 from "./assets/b7.jpg";
 
-import b1Image from "./assets/b1.jpg";
-import b2Image from "./assets/b2.jpg";
-import b3Image from "./assets/b3.jpg";
-import b4Image from "./assets/b4.jpg";
-import b5Image from "./assets/b5.jpg";
-import b6Image from "./assets/b6.jpg";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PortfolioSection = () => {
+  const portfolioRef = useRef(null);
+
   const portfolioItems = [
     {
       id: 1,
-      title: "Resturant",
+      title: "Restaurant",
       tags: ["branding", "UI design"],
       mockupImage: myImage1,
       description: "Vos Tissus - Explore more",
@@ -44,10 +44,48 @@ const PortfolioSection = () => {
       description: "Jewelry Collection",
     },
   ];
+  const handleMouseMove = (e, id) => {
+    const cursor = document.getElementById(`cursor-${id}`);
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    if (cursor) {
+      cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      cursor.style.opacity = 1;
+    }
+  };
+
+  const handleMouseLeave = (id) => {
+    const cursor = document.getElementById(`cursor-${id}`);
+    if (cursor) {
+      cursor.style.opacity = 0;
+    }
+  };
+
+  useEffect(() => {
+    gsap.utils.toArray(".mockup-image").forEach((img) => {
+      gsap.fromTo(
+        img,
+        { scale: 0.95 },
+        {
+          scale: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true, // smooth scroll sync
+          },
+        }
+      );
+    });
+
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  }, []);
 
   return (
-    <div className="portfolio-section">
-      {/* Selected Works Section */}
+    <div className="portfolio-section" ref={portfolioRef}>
       <div className="selected-works">
         <div className="container">
           <span className="main-title">Selected Works</span>
@@ -57,13 +95,21 @@ const PortfolioSection = () => {
 
           <div className="portfolio-grid">
             {portfolioItems.map((item) => (
-              <div key={item.id} className="portfolio-item">
+              <div
+                key={item.id}
+                className="portfolio-item"
+                onMouseMove={(e) => handleMouseMove(e, item.id)}
+                onMouseLeave={() => handleMouseLeave(item.id)}
+              >
                 <div className="mockup-container">
                   <img
                     src={item.mockupImage}
                     alt={item.description}
                     className="mockup-image"
                   />
+                  <div className="custom-cursor" id={`cursor-${item.id}`}>
+                    View More Projects
+                  </div>
                 </div>
 
                 <div className="item-info">
@@ -81,117 +127,6 @@ const PortfolioSection = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="branding-section">
-        <div className="container">
-          <div className="branding-layout">
-            {/* Large BRANDING title */}
-            <h2 className="branding-main-title">Barnding</h2>
-
-            {/* Scattered product images - exact positioning from original */}
-            <div className="branding-items-scattered">
-              <div className="branding-item item-1">
-                <TiltedCard
-                  imageSrc={b1Image}
-                  altText="beauty stone"
-                  captionText="beauty stone"
-                  containerHeight="250px"
-                  containerWidth="200px"
-                  imageHeight="250px"
-                  imageWidth="200px"
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={true}
-                />
-                <p className="item-label">beauty stone</p>
-              </div>
-              <div className="branding-item item-2">
-                <TiltedCard
-                  imageSrc={b2Image}
-                  altText="beauty stone"
-                  captionText="beauty stone"
-                  containerHeight="250px"
-                  containerWidth="200px"
-                  imageHeight="250px"
-                  imageWidth="200px"
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={true}
-                />
-                <p className="item-label">beauty stone</p>
-              </div>
-              <div className="branding-item item-3">
-                <TiltedCard
-                  imageSrc={b3Image}
-                  altText="beauty stone"
-                  captionText="beauty stone"
-                  containerHeight="250px"
-                  containerWidth="200px"
-                  imageHeight="250px"
-                  imageWidth="200px"
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={true}
-                />
-                <p className="item-label">beauty stone</p>
-              </div>
-
-              <div className="branding-item item-4">
-                <TiltedCard
-                  imageSrc={b4Image}
-                  altText="beauty stone"
-                  captionText="beauty stone"
-                  containerHeight="250px"
-                  containerWidth="200px"
-                  imageHeight="250px"
-                  imageWidth="200px"
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={true}
-                />
-                <p className="item-label">beauty stone</p>
-              </div>
-              <div className="branding-item item-5">
-                <TiltedCard
-                  imageSrc={b5Image}
-                  altText="beauty stone"
-                  captionText="beauty stone"
-                  containerHeight="250px"
-                  containerWidth="200px"
-                  imageHeight="250px"
-                  imageWidth="200px"
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={true}
-                />
-                <p className="item-label">Beauty stone</p>
-              </div>
-              <div className="branding-item item-6">
-                <TiltedCard
-                  imageSrc={b6Image}
-                  altText="beauty stone"
-                  captionText="dermi"
-                  containerHeight="250px"
-                  containerWidth="200px"
-                  imageHeight="250px"
-                  imageWidth="200px"
-                  showMobileWarning={false}
-                  showTooltip={true}
-                  displayOverlayContent={true}
-                />
-                <p className="item-label">Dermi</p>
-              </div>
-            </div>
-
-            {/* Bottom subtitle */}
-            <div className="branding-subtitle-bottom">
-              <p className="section-subtitle">
-                // We help brands grow and tell their stories to the world.
-              </p>
-            </div>
           </div>
         </div>
       </div>

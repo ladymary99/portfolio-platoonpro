@@ -6,7 +6,7 @@ import SelectedWork from "./SelectedWork.jsx";
 import Footer from "./Footer.jsx";
 import "./index.css";
 import Services from "./Services.jsx";
-
+import Barnding from "./Barnding.jsx";
 import VideoSection from "./VideoSection";
 
 function App() {
@@ -92,6 +92,7 @@ function App() {
       </div>
       <Services />
       <SelectedWork />
+      <Barnding />
       <VideoSection />
       <Footer />
     </div>
