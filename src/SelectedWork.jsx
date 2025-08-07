@@ -1,7 +1,7 @@
 import React from "react";
 import "./SelectedWork.css";
 import TiltedCard from "./TiltedCard";
-import myImage1 from "./assets/RES1.png";
+import myImage1 from "./assets/res1.png";
 import myImage2 from "./assets/RES2.png";
 import myImage3 from "./assets/RES3.png";
 
