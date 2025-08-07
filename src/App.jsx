@@ -7,7 +7,8 @@ import Footer from "./Footer.jsx";
 import "./index.css";
 import Services from "./Services.jsx";
 import Barnding from "./Barnding.jsx";
-import VideoSection from "./VideoSection";
+import VideoSection from "./VideoSection.jsx";
+import AboutSection from "./AboutSection.jsx";
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
           </button>
         </div>
       </div>
+      <AboutSection />
       <Services />
       <SelectedWork />
       <Barnding />

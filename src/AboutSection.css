@@ -1,0 +1,93 @@
+.about-section {
+  padding: 3rem 2rem;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 15px;
+  margin: 4rem 1rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+  transform-origin: center;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.label {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.char {
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #333;
+}
+
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.number {
+  color: #2c5aa0;
+}
+
+/* ScrollAnimatedSection.css */
+
+.scroll-section {
+  padding: 200px 0;
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+
+.scroll-title {
+  font-size: 3rem;
+  transition: color 0.3s ease;
+}
+
+.image-wrapper {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.scroll-image {
+  width: 400px;
+  height: auto;
+  transform: scale(0.8);
+  transition: transform 0.3s ease-out;
+  border-radius: 12px;
+}
