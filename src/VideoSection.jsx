@@ -4,9 +4,9 @@ import gsap from "gsap";
 import "./VideoSection.css";
 import v1 from "./assets/v1.mp4";
 import v2 from "./assets/v2.mp4";
-import v3 from "./assets/v2.mp4";
-import v4 from "./assets/v1.mp4";
-import v5 from "./assets/v2.mp4";
+import v3 from "./assets/v3.mp4";
+import v4 from "./assets/v4.mp4";
+import v5 from "./assets/v5.mp4";
 
 const healthItems = [
   {
