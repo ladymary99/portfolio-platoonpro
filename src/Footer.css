@@ -1,0 +1,131 @@
+.footer {
+  background: black;
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+.footer-main {
+  padding: 40px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-title {
+  font-size: 6rem;
+
+  z-index: 1;
+  font-family: "Getai Grotesk", sans-serif;
+  background: linear-gradient(to right, #ebedff, #38549e, #020c1b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.get-in-touch-btn {
+  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
+  border: none;
+  padding: 14px 50px;
+  border-radius: 30px;
+  color: white;
+  font-size: 2rem;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: transform 0.2s ease;
+
+  font-family: "Getai Grotesk", sans-serif;
+}
+
+.get-in-touch-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #2a3441;
+  padding: 0px 0 15px;
+}
+
+.footer-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  align-items: start;
+}
+.footer-column {
+  border-left: 1px solid #2a3441;
+}
+.footer-column h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  color: #6b7684;
+  text-transform: uppercase;
+}
+
+.footer-column p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 6px 10px;
+  color: white;
+  font-weight: 400;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-left: 10px;
+}
+
+.social-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.social-link:hover {
+  color: #87ceeb;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-title {
+    font-size: 3rem;
+  }
+
+  .footer-info {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .footer-container {
+    padding: 0 20px;
+  }
+}

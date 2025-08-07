@@ -1,0 +1,30 @@
+{
+  "name": "platoonpro",
+  "version": "1.0.0",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@react-spring/three": "^10.0.1",
+    "@react-three/fiber": "^9.3.0",
+    "@shadergradient/react": "^2.1.3",
+    "framer-motion": "^12.23.12",
+    "gsap": "^3.13.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "shadergradient": "^1.3.5",
+    "three": "^0.179.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.179.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^7.0.6"
+  }
+}
