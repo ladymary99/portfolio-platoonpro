@@ -1,0 +1,75 @@
+.navbar {
+  height: 60px;
+  padding: 0 20px;
+  margin: 10px 0 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.menu-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.274);
+  padding: 14px 24px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  background: #2c5aa0;
+  font-family: "Getai Grotesk", sans-serif;
+}
+
+.menu-overlay {
+  position: fixed;
+  background: #2c5aa0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: end;
+  padding: 80px 40px;
+  width: 300px;
+  margin: 0;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+.menu-number {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.menu-label {
+  margin-left: 8px;
+}
+
+.menu-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}

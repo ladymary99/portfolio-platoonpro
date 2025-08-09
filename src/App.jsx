@@ -9,11 +9,11 @@ import Services from "./Services.jsx";
 import Barnding from "./Barnding.jsx";
 import VideoSection from "./VideoSection.jsx";
 import AboutSection from "./AboutSection.jsx";
-
+import FlowingMenu from "./FlowingMenu.jsx";
+import Menu from "./Menu.jsx";
 function App() {
   return (
     <div className="container">
-      );
       <div className="hero-section">
         {/* Background blur effects */}
         <ShaderGradientCanvas
@@ -29,7 +29,7 @@ function App() {
         </ShaderGradientCanvas>
 
         {/* Navigation */}
-        <nav className="nav">
+        {/* <nav className="nav">
           <div className="logo">
             <img src={myImage} alt="Description" />
           </div>
@@ -59,8 +59,8 @@ function App() {
               </svg>
             </div>
           </button>
-        </nav>
-
+        </nav> */}
+        <Menu />
         {/* Hero Section */}
         <div className="hero">
           <h1 className="hero-title">
@@ -93,6 +93,7 @@ function App() {
         </div>
       </div>
       <AboutSection />
+      <FlowingMenu />
       <Services />
       <SelectedWork />
       <Barnding />
