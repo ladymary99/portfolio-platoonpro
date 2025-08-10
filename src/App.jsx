@@ -11,9 +11,11 @@ import VideoSection from "./VideoSection.jsx";
 import AboutSection from "./AboutSection.jsx";
 import FlowingMenu from "./FlowingMenu.jsx";
 import Menu from "./Menu.jsx";
+import Contact from "./Contact.jsx";
 function App() {
   return (
     <div className="container">
+      <Menu />
       <div className="hero-section">
         {/* Background blur effects */}
         <ShaderGradientCanvas
@@ -28,39 +30,6 @@ function App() {
           />
         </ShaderGradientCanvas>
 
-        {/* Navigation */}
-        {/* <nav className="nav">
-          <div className="logo">
-            <img src={myImage} alt="Description" />
-          </div>
-
-          <div className="nav-center">
-            <button className="nav-btn active">Services</button>
-            <button className="nav-btn">About</button>
-            <button className="nav-btn">Pricing</button>
-          </div>
-
-          <button className="nav-btn outline">
-            let's discuss
-            <div className="cta-icon">
-              <svg
-                width="16"
-                height="16"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 17l9.2-9.2M17 17V7H7"
-                />
-              </svg>
-            </div>
-          </button>
-        </nav> */}
-        <Menu />
         {/* Hero Section */}
         <div className="hero">
           <h1 className="hero-title">
@@ -98,6 +67,7 @@ function App() {
       <SelectedWork />
       <Barnding />
       <VideoSection />
+      <Contact />
       <Footer />
     </div>
   );

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./SelectedWork.css";
-import TiltedCard from "./TiltedCard";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import b1Image from "./assets/b1.jpg";
 import b2Image from "./assets/b2.jpg";
@@ -9,110 +10,57 @@ import b4Image from "./assets/b4.jpg";
 import b5Image from "./assets/b5.jpg";
 import b6Image from "./assets/b6.jpg";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Branding = () => {
+  const brandingRef = useRef(null);
+
+  useEffect(() => {
+    gsap.utils.toArray(".branding-image").forEach((img) => {
+      gsap.fromTo(
+        img,
+        { scale: 0.95 },
+        {
+          scale: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true,
+          },
+        }
+      );
+    });
+
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+  }, []);
+
   return (
-    <div className="branding-section">
+    <div className="branding-section" ref={brandingRef}>
       <div className="container3">
         <div className="branding-layout">
-          {/* Large BRANDING title */}
-          <h2 className="branding-main-title">Barnding</h2>
+          <h2 className="branding-main-title">Branding</h2>
 
-          {/* Scattered product images - exact positioning from original */}
           <div className="branding-items-scattered">
-            <div className="branding-item item-1">
-              <TiltedCard
-                imageSrc={b1Image}
-                altText="beauty stone"
-                captionText="beauty stone"
-                containerHeight="250px"
-                containerWidth="200px"
-                imageHeight="250px"
-                imageWidth="200px"
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-              />
-              <p className="item-label">beauty stone</p>
-            </div>
-            <div className="branding-item item-2">
-              <TiltedCard
-                imageSrc={b2Image}
-                altText="beauty stone"
-                captionText="beauty stone"
-                containerHeight="250px"
-                containerWidth="200px"
-                imageHeight="250px"
-                imageWidth="200px"
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-              />
-              <p className="item-label">beauty stone</p>
-            </div>
-            <div className="branding-item item-3">
-              <TiltedCard
-                imageSrc={b3Image}
-                altText="beauty stone"
-                captionText="beauty stone"
-                containerHeight="250px"
-                containerWidth="200px"
-                imageHeight="250px"
-                imageWidth="200px"
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-              />
-              <p className="item-label">beauty stone</p>
-            </div>
-
-            <div className="branding-item item-4">
-              <TiltedCard
-                imageSrc={b4Image}
-                altText="beauty stone"
-                captionText="beauty stone"
-                containerHeight="250px"
-                containerWidth="200px"
-                imageHeight="250px"
-                imageWidth="200px"
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-              />
-              <p className="item-label">beauty stone</p>
-            </div>
-            <div className="branding-item item-5">
-              <TiltedCard
-                imageSrc={b5Image}
-                altText="beauty stone"
-                captionText="beauty stone"
-                containerHeight="250px"
-                containerWidth="200px"
-                imageHeight="250px"
-                imageWidth="200px"
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-              />
-              <p className="item-label">Beauty stone</p>
-            </div>
-            <div className="branding-item item-6">
-              <TiltedCard
-                imageSrc={b6Image}
-                altText="beauty stone"
-                captionText="dermi"
-                containerHeight="250px"
-                containerWidth="200px"
-                imageHeight="250px"
-                imageWidth="200px"
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-              />
-              <p className="item-label">Dermi</p>
-            </div>
+            {[b1Image, b2Image, b3Image, b4Image, b5Image, b6Image].map(
+              (img, index) => (
+                <div className={`branding-item item-${index + 1}`} key={index}>
+                  <div className="branding-image-container">
+                    <img
+                      src={img}
+                      alt={`branding-${index + 1}`}
+                      className="branding-image"
+                    />
+                    <p className="item-label">
+                      {index === 5 ? "Dermi" : "beauty stone"}
+                    </p>
+                  </div>
+                </div>
+              )
+            )}
           </div>
 
-          {/* Bottom subtitle */}
           <div className="branding-subtitle-bottom">
             <p className="section-subtitle">
               // We help brands grow and tell their stories to the world.
@@ -123,4 +71,5 @@ const Branding = () => {
     </div>
   );
 };
+
 export default Branding;

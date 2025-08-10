@@ -98,7 +98,7 @@ const AboutSection = () => {
           <img src={astronaut} alt="Astronaut Toy" className="mockup-image" />
         </div>
         <div className="about-text" ref={textContainerRef}>
-          <p className="label">(About)</p>
+          <p className="label">. About</p>
           <p ref={textRef} className="description">
             {text.split("").map((char, index) => (
               <span key={index} className="char">
