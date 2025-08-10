@@ -62,6 +62,9 @@
   transition: all 0.4s ease;
 }
 @media (max-width: 768px) {
+  .health-section {
+    padding: 0;
+  }
   .left-panel {
     font-size: 1rem;
   }

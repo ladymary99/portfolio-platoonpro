@@ -153,42 +153,42 @@ img {
 }
 
 .item-1 {
-  top: 30px;
-  left: 10px;
+  top: 0%;
+  left: 1%;
   width: 200px;
   height: 250px;
 }
 
 .item-2 {
-  top: 80px;
-  left: 220px;
+  top: 10%;
+  left: 17%;
   width: 200px;
   height: 250px;
 }
 
 .item-3 {
-  top: 150px;
-  left: 430px;
+  top: 20%;
+  left: 33%;
   width: 200px;
   height: 250px;
 }
 
 .item-4 {
-  top: 210px;
-  right: 430px;
+  top: 30%;
+  right: 35%;
   width: 200px;
   height: 250px;
 }
 
 .item-5 {
-  bottom: 200px;
-  right: 220px;
+  bottom: 25%;
+  right: 19%;
   width: 200px;
   height: 250px;
 }
 .item-6 {
-  bottom: 150px;
-  right: 10px;
+  bottom: 18%;
+  right: 3%;
   width: 200px;
   height: 250px;
 }
@@ -234,46 +234,35 @@ img {
   }
 
   .container {
-    padding: 40px 2px;
+    padding: 4px 2px;
   }
 
   .branding-main-title {
     font-size: 4rem;
   }
-
   .branding-layout {
-    height: 800px;
+    height: auto; /* let it expand with items */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 20px;
   }
 
-  .item-2 {
-    top: 80px;
-    left: 160px;
-  }
-  .item-3 {
-    top: 150px;
-    left: 310px;
-  }
-
-  .item-4 {
-    top: 210px;
-    right: 500px;
-  }
-
-  .item-5 {
-    bottom: 270px;
-    right: 220px;
-    width: 200px;
-    height: 250px;
-  }
-  .item-6 {
-    bottom: 200px;
-    right: 10px;
-    width: 200px;
-    height: 250px;
-  }
   .branding-item {
-    transform: scale(0.7); /* 70% size */
-    transform-origin: top left; /* keeps position alignment */
+    position: relative; /* no more absolute for mobile */
+    transform: scale(1); /* keep full size */
+    width: 45%; /* 2 items per row */
+    height: auto;
+  }
+
+  .branding-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .item-label {
+    font-size: 0.8rem;
   }
 }
 
