@@ -63,7 +63,10 @@ const Branding = () => {
 
           <div className="branding-subtitle-bottom">
             <p className="section-subtitle">
-              // We help brands grow and tell their stories to the world.
+              // We cook up logos, color palettes, menus, and signage that feel
+              like the first bite—unforgettable. From food-truck charm to
+              fine-dining prestige, we plate your story so guests taste it
+              before they even sit down.
             </p>
           </div>
         </div>

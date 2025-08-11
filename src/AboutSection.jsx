@@ -89,7 +89,7 @@ const AboutSection = () => {
   }, []);
 
   const text =
-    "With 10 years under our belt, we’re experts at crafting — memorable websites and brand visuals that reflect each client’s unique story";
+    "5 years, zero  fluff—just restaurant-first design. We turn tired sites into table-booking machines and brands guests can’t scroll past.";
 
   return (
     <section className="about-section">
@@ -108,10 +108,10 @@ const AboutSection = () => {
           </p>
           <ul className="info-list" ref={listRef}>
             <li>
-              <span className="number">01.</span> Digital Design Studio
+              <span className="number">01.</span> Digital Marketing Agency
             </li>
             <li>
-              <span className="number">02.</span> From (Hanoi, Vietnam)
+              <span className="number">02.</span> From (Paris, France)
             </li>
           </ul>
         </div>

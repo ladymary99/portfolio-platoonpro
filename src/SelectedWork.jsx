@@ -1,8 +1,9 @@
 import React from "react";
 import "./SelectedWork.css";
-import myImage1 from "./assets/b7.jpg";
-import myImage2 from "./assets/b7.jpg";
-import myImage3 from "./assets/b7.jpg";
+import myImage1 from "./assets/design1.png";
+import myImage2 from "./assets/design2.png";
+import myImage3 from "./assets/design3.png";
+import myImage4 from "./assets/design4.jpg";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -17,30 +18,29 @@ const PortfolioSection = () => {
     {
       id: 1,
       title: "Restaurant",
-      tags: ["branding", "UI design"],
+      tags: ["Branding", "UI design"],
       mockupImage: myImage1,
       description: "Vos Tissus - Explore more",
     },
     {
       id: 2,
-      title: "ILOVETISSUS",
-      tags: ["branding"],
+      title: "MAMIAMO Italian Restuarant",
+      tags: ["Branding", "UI design", "Booking"],
       mockupImage: myImage2,
       description: "Confidence - Shop now",
     },
     {
       id: 3,
-      title: "ILOVETISSUS",
-      tags: ["web design"],
+      title: "MAC DRINKS",
+      tags: ["web design", "UI design", "Booking"],
       mockupImage: myImage3,
       description: "DRINKS - About us, Our menu, Reservations, Contact us",
     },
     {
       id: 4,
-      title: "ILOVETISSUS",
-      tags: ["branding"],
-      mockupImage:
-        "https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=400&h=300&fit=crop",
+      title: "Cazador Restuarant",
+      tags: ["Branding", "UI design"],
+      mockupImage: myImage4,
       description: "Jewelry Collection",
     },
   ];
@@ -90,7 +90,10 @@ const PortfolioSection = () => {
         <div className="container">
           <span className="main-title">Selected Works</span>
           <p className="subtitle">
-            // We help brands grow and tell their stories to the world.
+            // One-page or full-course—we build sites that seat diners 24/7.
+            Mouth-watering photos, one-click reservations, lightning mobile
+            speed, and menus that auto-sync with your POS. Your kitchen never
+            sleeps; neither should your website.
           </p>
 
           <div className="portfolio-grid">
