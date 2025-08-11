@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import ScrollStack, { ScrollStackItem } from "./ScrollStack";
 import "./FlowingMenu.css";
 
 const blocks = [
@@ -101,70 +102,76 @@ export default function ServicesSection() {
       </div>
 
       {/* Right side with 2 columns */}
+
       <div className="services-right">
-        {blocks.map((block, i) => {
-          const isVisible = visibleItems[block.id];
-          return (
-            <article
-              key={block.id}
-              className={`service-block ${isVisible ? "visible" : "hidden"}`}
-              data-id={block.id}
-            >
-              <div className="block-header">
-                <span className="block-number">{block.id}</span>
-                <div
-                  className="decorative"
-                  style={{ transform: `rotate(${235.6 + i * 0.02}deg)` }}
-                  aria-hidden="true"
+        <ScrollStack>
+          {blocks.map((block, i) => {
+            const isVisible = visibleItems[block.id];
+            return (
+              <ScrollStackItem key={block.id}>
+                <article
+                  className={`service-block ${
+                    isVisible ? "visible" : "hidden"
+                  }`}
+                  data-id={block.id}
                 >
-                  <svg
-                    width="64"
-                    height="64"
-                    viewBox="0 0 72 72"
-                    className="wheel"
-                  >
-                    <circle
-                      cx="36"
-                      cy="36"
-                      r="30"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
+                  <div className="block-header">
+                    <span className="block-number">{block.id}</span>
+                    <div
+                      className="decorative"
+                      style={{ transform: `rotate(${235.6 + i * 0.02}deg)` }}
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="64"
+                        height="64"
+                        viewBox="0 0 72 72"
+                        className="wheel"
+                      >
+                        <circle
+                          cx="36"
+                          cy="36"
+                          r="30"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <g transform="translate(36,36)">
+                          <path
+                            d="M0,-24 L8,-8 L24,-8 L12,4 L16,20 L0,12 L-16,20 L-12,4 L-24,-8 L-8,-8 Z"
+                            fill="currentColor"
+                            opacity="0.08"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <header className="block-title">
+                    <h2
+                      className="title"
+                      dangerouslySetInnerHTML={{
+                        __html: block.heading.replace("\n", "<br/>"),
+                      }}
                     />
-                    <g transform="translate(36,36)">
-                      <path
-                        d="M0,-24 L8,-8 L24,-8 L12,4 L16,20 L0,12 L-16,20 L-12,4 L-24,-8 L-8,-8 Z"
-                        fill="currentColor"
-                        opacity="0.08"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
+                  </header>
 
-              <header className="block-title">
-                <h2
-                  className="title"
-                  dangerouslySetInnerHTML={{
-                    __html: block.heading.replace("\n", "<br/>"),
-                  }}
-                />
-              </header>
-
-              <div className="block-content">
-                <p className="subtitle">{block.subtitle}</p>
-                <ul className="service-list">
-                  {block.items.map((item, idx) => (
-                    <li className="service-item" key={idx}>
-                      <div className="icon-dot" aria-hidden="true" />
-                      <span className="service-text">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          );
-        })}
+                  <div className="block-content">
+                    <p className="subtitle">{block.subtitle}</p>
+                    <ul className="service-list">
+                      {block.items.map((item, idx) => (
+                        <li className="service-item" key={idx}>
+                          <div className="icon-dot" aria-hidden="true" />
+                          <span className="service-text">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              </ScrollStackItem>
+            );
+          })}
+        </ScrollStack>
       </div>
     </section>
   );
