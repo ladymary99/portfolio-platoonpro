@@ -31,7 +31,7 @@
 }
 
 .contact-form label {
-  color: #555555;
+  color: #94a3b8;
 }
 
 .contact-form input,
@@ -89,7 +89,6 @@
   min-height: 120px;
 }
 
-/* ---------- Right – Calendly Inline ---------- */
 .calendly-inline-wrapper {
   position: relative;
 }
@@ -98,7 +97,6 @@
   border-radius: 8px;
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .contact-calendly-wrapper {
     grid-template-columns: 1fr;

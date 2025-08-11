@@ -46,21 +46,20 @@ const PortfolioSection = () => {
   ];
   const handleMouseMove = (e, id) => {
     const cursor = document.getElementById(`cursor-${id}`);
+    if (!cursor) return;
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    if (cursor) {
-      cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-      cursor.style.opacity = 1;
-    }
+    // Move the custom cursor to the mouse position within the container
+    cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    cursor.style.opacity = "1";
   };
 
   const handleMouseLeave = (id) => {
     const cursor = document.getElementById(`cursor-${id}`);
-    if (cursor) {
-      cursor.style.opacity = 0;
-    }
+    if (cursor) cursor.style.opacity = "0";
   };
 
   useEffect(() => {
@@ -89,7 +88,7 @@ const PortfolioSection = () => {
       <div className="selected-works">
         <div className="container">
           <span className="main-title">Selected Works</span>
-          <p className="subtitle">
+          <p className="subtitles">
             // One-page or full-course—we build sites that seat diners 24/7.
             Mouth-watering photos, one-click reservations, lightning mobile
             speed, and menus that auto-sync with your POS. Your kitchen never
@@ -122,7 +121,7 @@ const PortfolioSection = () => {
                   </div>
                   <div className="tags">
                     {item.tags.map((tag, index) => (
-                      <span key={index} className="tag">
+                      <span key={index} className="tagworks">
                         {tag}
                       </span>
                     ))}

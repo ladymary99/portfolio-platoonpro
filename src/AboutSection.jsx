@@ -89,7 +89,7 @@ const AboutSection = () => {
   }, []);
 
   const text =
-    "5 years, zero  fluff—just restaurant-first design. We turn tired sites into table-booking machines and brands guests can’t scroll past.";
+    "5 years, zero fluff—just restaurant-first design. We turn tired sites into table-booking machines and brands guests can’t scroll past.";
 
   return (
     <section className="about-section">
@@ -98,11 +98,11 @@ const AboutSection = () => {
           <img src={astronaut} alt="Astronaut Toy" className="mockup-image" />
         </div>
         <div className="about-text" ref={textContainerRef}>
-          <p className="label">. About</p>
+          <p className="label">// About</p>
           <p ref={textRef} className="description">
             {text.split("").map((char, index) => (
               <span key={index} className="char">
-                {char}
+                {char === " " ? "\u00A0" : char}
               </span>
             ))}
           </p>

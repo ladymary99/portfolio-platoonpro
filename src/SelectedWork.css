@@ -11,7 +11,6 @@
 
   margin: 0 40px;
 }
-
 /* Selected Works Section */
 
 .main-title {
@@ -20,13 +19,12 @@
   font-family: "Getai Grotesk", sans-serif;
 }
 
-.subtitle {
+.subtitles {
   font-size: 1.2rem;
-  color: #dadada;
+  color: #94a3b8;
   margin: 0 0 80px 0;
   font-style: italic;
   width: 400px;
-  padding-bottom: 40px;
 }
 
 .portfolio-grid {
@@ -40,8 +38,9 @@
   border-radius: 12px;
   width: 100%;
   overflow: hidden;
-  border: 1px solid #333;
+  border: 1px solid #94a3b849;
   transition: transform 0.3s ease;
+  cursor: none;
 }
 
 .mockup-container {
@@ -87,14 +86,35 @@ img {
 span {
   color: #eeeeee;
 }
-.tag {
+.tagworks {
   background: transparent;
-  border: 1px solid #8888885e;
+  border: 1px solid #94a3b8;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
-  color: #eeeeee;
+  color: #94a3b8;
   transition: all 0.3s ease;
+}
+
+.custom-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  transform: translate(-50%, -120%);
+  z-index: 100;
+}
+
+.mockup-container:hover .custom-cursor {
+  opacity: 1;
 }
 
 /* Branding Section */
@@ -147,12 +167,12 @@ span {
 
 .item-label {
   background: transparent;
-  border: 1px solid #444;
+  border: 1px solid #94a3b8;
   padding: 5px 6px;
   border-radius: 20px;
   font-size: 1rem;
   margin-top: 20px;
-  color: #ccc;
+  color: #94a3b8;
   transition: all 0.3s ease;
 }
 
@@ -205,12 +225,12 @@ span {
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #888;
+  color: #94a3b8;
   margin: 0;
   font-style: italic;
 }
 .branding-image-container {
-  border: 1px solid #333;
+  border: 1px solid #94a3b862;
   padding: 5px;
   border-radius: 10px;
   overflow: hidden;

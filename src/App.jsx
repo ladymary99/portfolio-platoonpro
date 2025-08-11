@@ -1,6 +1,7 @@
 import React from "react";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
 import * as reactSpring from "@react-spring/three";
+import { Routes, Route } from "react-router-dom";
 import myImage from "./assets/logo.png";
 import SelectedWork from "./SelectedWork.jsx";
 import Footer from "./Footer.jsx";
@@ -16,6 +17,11 @@ function App() {
   return (
     <div className="container">
       <Menu />
+      <Routes>
+        {/* <Route path="/pricing" element={<PricingPage />} /> */}
+        <Route path="/works" element={<SelectedWork />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <div className="hero-section">
         {/* Background blur effects */}
         <ShaderGradientCanvas
