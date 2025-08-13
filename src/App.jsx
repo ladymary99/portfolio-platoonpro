@@ -2,7 +2,7 @@ import React from "react";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
 import * as reactSpring from "@react-spring/three";
 import { Routes, Route } from "react-router-dom";
-import myImage from "./assets/logo.png";
+// import myImage from "./assets/logo.png";
 import SelectedWork from "./SelectedWork.jsx";
 import Footer from "./Footer.jsx";
 import "./index.css";
@@ -13,6 +13,7 @@ import AboutSection from "./AboutSection.jsx";
 import FlowingMenu from "./FlowingMenu.jsx";
 import Menu from "./Menu.jsx";
 import Contact from "./Contact.jsx";
+import Hero from "./Hero.jsx";
 function App() {
   return (
     <div className="container">
@@ -22,8 +23,9 @@ function App() {
         <Route path="/works" element={<SelectedWork />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <div className="hero-section">
-        {/* Background blur effects */}
+      <Hero />
+      {/* <div className="hero-section">
+
         <ShaderGradientCanvas
           style={{
             position: "absolute",
@@ -36,7 +38,7 @@ function App() {
           />
         </ShaderGradientCanvas>
 
-        {/* Hero Section */}
+      
         <div className="hero">
           <h1 className="hero-title">
             We create remarkable
@@ -66,7 +68,7 @@ function App() {
             </div>
           </button>
         </div>
-      </div>
+      </div> */}
       <AboutSection />
       <FlowingMenu />
       <Services />
