@@ -2,7 +2,10 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Hero.css"; // import the external CSS
+import "./Hero.css";
+import v4 from "./assets/v4.mp4";
+import Image from "./assets/design1.png";
+import b2Image from "./assets/b2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,8 +13,8 @@ export default function Hero() {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
 
+  /* ---------- scroll-triggered entrance ---------- */
   useEffect(() => {
-    // left boxes slide in from left
     gsap.fromTo(
       ".box",
       { x: -120, opacity: 0 },
@@ -28,7 +31,6 @@ export default function Hero() {
       }
     );
 
-    // right column text & button slide in from right
     gsap.fromTo(
       ".right-col > *",
       { x: 120, opacity: 0 },
@@ -46,41 +48,72 @@ export default function Hero() {
     );
   }, []);
 
+  /* ---------- hover blur ---------- */
+  useEffect(() => {
+    const boxes = gsap.utils.toArray(".box");
+
+    boxes.forEach((box) => {
+      box.addEventListener("mouseenter", () => {
+        gsap.to(
+          boxes.filter((b) => b !== box),
+          { filter: "blur(4px)", duration: 0.35, ease: "power2.out" }
+        );
+      });
+
+      box.addEventListener("mouseleave", () => {
+        gsap.to(boxes, {
+          filter: "blur(0px)",
+          duration: 0.35,
+          ease: "power2.out",
+        });
+      });
+    });
+  }, []);
+
   return (
     <section className="hero">
-      <div className="mainspace ">
+      <div className="main-space">
         {/* LEFT */}
         <div className="left-col" ref={leftRef}>
           <div className="box video">
-            <video src="/sample.mp4" muted autoPlay loop playsInline />
+            <video src={v4} muted autoPlay loop playsInline />
           </div>
-
           <div className="box image">
-            <img src="/img1.jpg" alt="pic 1" />
+            <img src={Image} alt="pic 1" />
           </div>
-
           <div className="box glass">
             <p>Glassy card</p>
           </div>
-
           <div className="box image">
-            <img src="/img2.jpg" alt="pic 2" />
+            <img src={b2Image} alt="pic 2" />
           </div>
         </div>
 
         {/* RIGHT */}
         <div className="right-col" ref={rightRef}>
-          <h1>Welcome to Our Site</h1>
-          <p>
+          <h1>We Make your restuarant online</h1>
+          {/* <p>
             We craft beautiful digital experiences that inspire and engage
             users. Scroll down to discover more.
-          </p>
-          <button
-            onClick={() =>
-              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-            }
-          >
-            Learn More
+          </p> */}
+          <button className="cta-btn">
+            <span>Digital solutions</span>
+            <div className="cta-icon">
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 17l9.2-9.2M17 17V7H7"
+                />
+              </svg>
+            </div>
           </button>
         </div>
       </div>

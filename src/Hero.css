@@ -1,11 +1,37 @@
-.mainspace {
+.hero {
+  min-height: 100vh;
+  padding: 100px 32px 20px 32px;
+  height: 100vh; /* ارتفاع دلخواه */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --w: #020c1b;
+  --cream: #082550;
+  --peach: #174a97;
+  --lav: #9e76dd;
+  --violet: #9aa1ff;
+  --sky: #a7d4ff;
+
+  background: linear-gradient(
+    to top right,
+    var(--w) 0%,
+    var(--w) 55%,
+    rgba(243, 232, 216, 0.6) 65%,
+    /* cream mixed into white */ rgba(255, 179, 154, 0.6) 75%,
+    /* peach mix */ rgba(202, 168, 255, 0.6) 85%,
+    /* lavender mix */ rgba(154, 161, 255, 0.6) 92%,
+    /* violet mix */ rgba(167, 212, 255, 0.6) 100% /* sky blue mix */
+  );
+}
+.main-space {
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  gap: 60px;
+  align-items: end;
 }
 
-/* ---- LEFT COLUMN ---- */
 .left-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -17,14 +43,17 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
 }
 
+/* NEW: ensure blur filter can be applied cleanly */
 .box video,
 .box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: none; /* GSAP will override this */
 }
 
 .box.glass {
@@ -38,11 +67,16 @@
   font-weight: 600;
 }
 
-/* ---- RIGHT COLUMN ---- */
+/* subtle scale lift on hover */
+.box:hover {
+  transform: scale(1.05);
+}
+
 .right-col h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+
   line-height: 1.2;
+  font-family: "Getai Grotesk", sans-serif;
 }
 
 .right-col p {
@@ -52,24 +86,45 @@
   color: #444;
 }
 
-.right-col button {
-  padding: 14px 32px;
-  font-size: 1rem;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
+.cta-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px 5px 20px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.right-col button:hover {
-  transform: translateY(-2px);
+.cta-icon {
+  width: 52px;
+  height: 52px;
+  margin-left: 16px;
+  margin-right: 0;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
 }
 
-/* ---- RESPONSIVE ---- */
+.cta-btn:hover .cta-icon {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(45deg);
+}
+
 @media (max-width: 768px) {
-  .container {
+  .main-space {
     grid-template-columns: 1fr;
     gap: 40px;
   }
