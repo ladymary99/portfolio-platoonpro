@@ -1,25 +1,31 @@
-// src/components/Hero.jsx
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hero.css";
-import v4 from "./assets/v4.mp4";
-import Image from "./assets/design1.png";
-import b2Image from "./assets/b2.jpg";
+
+import firstImage from "./assets/design1.png"; // Top big image
+import overlayImage from "./assets/b1.jpg"; // small overlay on first image
+import glassBackground from "./assets/b2.jpg"; // glassy box background
+import cornerImage from "./assets/b3.jpg"; // right image in glassy box
+import videoSrc from "./assets/v4.mp4"; // video for glassy box
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  /* ---------- scroll-triggered entrance ---------- */
+  // Scroll animations
   useEffect(() => {
+    const boxes = gsap.utils.toArray(".box");
+
     gsap.fromTo(
-      ".box",
-      { x: -120, opacity: 0 },
+      boxes,
+      { y: 40, opacity: 0 },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
         duration: 0.8,
         stagger: 0.15,
@@ -31,71 +37,71 @@ export default function Hero() {
       }
     );
 
-    gsap.fromTo(
-      ".right-col > *",
-      { x: 120, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.9,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: rightRef.current,
-          start: "top 80%",
-        },
-      }
-    );
-  }, []);
-
-  /* ---------- hover blur ---------- */
-  useEffect(() => {
-    const boxes = gsap.utils.toArray(".box");
-
+    // Hover blur: blur all other boxes
     boxes.forEach((box) => {
       box.addEventListener("mouseenter", () => {
         gsap.to(
           boxes.filter((b) => b !== box),
-          { filter: "blur(4px)", duration: 0.35, ease: "power2.out" }
+          {
+            filter: "blur(4px)",
+            duration: 0.3,
+            ease: "power2.out",
+          }
         );
       });
-
       box.addEventListener("mouseleave", () => {
         gsap.to(boxes, {
           filter: "blur(0px)",
-          duration: 0.35,
+          duration: 0.3,
           ease: "power2.out",
         });
       });
     });
   }, []);
 
+  const toggleVideo = () => {
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <section className="hero">
       <div className="main-space">
-        {/* LEFT */}
+        {/* LEFT COLUMN */}
         <div className="left-col" ref={leftRef}>
-          <div className="box video">
-            <video src={v4} muted autoPlay loop playsInline />
+          {/* First Image */}
+          <div className="box big-image">
+            <img src={firstImage} alt="First" />
+            <img className="overlay-img" src={overlayImage} alt="Overlay" />
           </div>
-          <div className="box image">
-            <img src={Image} alt="pic 1" />
-          </div>
+
+          {/* Glassy Box with video + image */}
           <div className="box glass">
-            <p>Glassy card</p>
-          </div>
-          <div className="box image">
-            <img src={b2Image} alt="pic 2" />
+            <img className="glass-bg" src={glassBackground} alt="Glass bg" />
+
+            {/* Video left */}
+            <div className="corner-box video-box">
+              <video ref={videoRef} src={videoSrc} muted playsInline />
+              <button className="play-btn" onClick={toggleVideo}>
+                {isPlaying ? "❚❚" : "▶"}
+              </button>
+            </div>
+
+            {/* Image right */}
+            <div className="corner-box image-box">
+              <img src={cornerImage} alt="Right" />
+            </div>
           </div>
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT COLUMN */}
         <div className="right-col" ref={rightRef}>
-          <h1>We Make your restuarant online</h1>
-          {/* <p>
-            We craft beautiful digital experiences that inspire and engage
-            users. Scroll down to discover more.
-          </p> */}
+          <h1>We Make your restaurant online</h1>
+          <p>Modern designs, smooth animations, and engaging visuals.</p>
           <button className="cta-btn">
             <span>Digital solutions</span>
             <div className="cta-icon">
