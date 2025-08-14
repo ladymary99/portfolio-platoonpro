@@ -23,7 +23,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Hero />
-
       <AboutSection />
       <FlowingMenu />
       <Services />
