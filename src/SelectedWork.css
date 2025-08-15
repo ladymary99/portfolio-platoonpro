@@ -94,16 +94,18 @@ span {
   font-size: 0.9rem;
   color: #94a3b8;
   transition: all 0.3s ease;
+  border-radius: 0 20px 0 20px;
 }
 
 .custom-cursor {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
+  background: linear-gradient(135deg, #2c5aa0 50%, #87ceeb 100%);
+  border-radius: 0 20px 0 20px;
   color: white;
   padding: 10px 25px;
-  border-radius: 50px;
+
   font-size: 0.85rem;
   white-space: nowrap;
   pointer-events: none;
@@ -148,6 +150,7 @@ span {
 .branding-item {
   position: absolute;
   border-radius: 12px;
+  cursor: none;
 
   /* border: 1px solid #333; */
   transition: transform 0.3s ease;
@@ -303,32 +306,6 @@ span {
   .branding-layout {
     height: 300px;
   }
-
-  /* Further adjust for smaller screens */
-  /* .item-1 {
-    width: 90px;
-    height: 140px;
-  }
-
-  .item-2 {
-    width: 80px;
-    height: 150px;
-  }
-
-  .item-3 {
-    width: 110px;
-    height: 130px;
-  }
-
-  .item-4 {
-    width: 90px;
-    height: 120px;
-  }
-
-  .item-5 {
-    width: 80px;
-    height: 130px;
-  } */
 }
 
 /* Portfolio Grid Styles */
@@ -345,4 +322,130 @@ span {
   display: block;
   transition: transform 0.3s ease-out;
   will-change: transform;
+}
+/* Hover Button */
+.hover-button {
+  position: fixed;
+  background: linear-gradient(135deg, #2c5aa0 50%, #87ceeb 100%);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 0 20px 0 20px;
+  font-size: 14px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Modal Overlay */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #38549e;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 800px; /* smaller width */
+  max-height: 80vh; /* prevent too tall */
+  overflow-y: auto; /* scroll if content overflows */
+  width: 90%; /* responsive width */
+  text-align: left;
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Modal Close Button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Modal Grid Layout */
+.modal-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-col img {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 300px;
+  height: 300px;
+  border-radius: 0 20px 0 20px;
+}
+
+.modal-col video {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 300px;
+  height: 300px;
+  border-radius: 0 20px 0 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.custom-video-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-video-container video {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  cursor: pointer;
+}
+
+.video-play-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 80px;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.video-play-btn:hover {
+  color: #38549e;
 }
