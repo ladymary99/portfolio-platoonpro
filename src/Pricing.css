@@ -1,0 +1,344 @@
+.pricing-section {
+  min-height: 100vh;
+  padding: 80px 0px;
+  margin: 0;
+}
+
+.pricing-container {
+  max-width: 1400px;
+  margin: 0 20px;
+}
+
+.pricing-header {
+  margin-bottom: 50px;
+}
+
+.pricing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  font-family: "Getai Grotesk", sans-serif;
+}
+
+.pricing-description {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 600px;
+}
+
+/* Cards Container */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Individual Card Styles */
+.pricing-card {
+  background: #041a3b;
+
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+/* Pro Card Special Styling */
+.pro-card {
+  transform: scale(1.05);
+  border: 2px solid #87ceeb;
+}
+
+.pro-card::before {
+  opacity: 1;
+}
+
+.pro-card:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -1px;
+  right: 30px;
+  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 0 0 15px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Card Header */
+.card-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.plan-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  font-family: "Getai Grotesk", sans-serif;
+}
+
+.plan-description {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Price Display */
+.price-display {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.price {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  font-family: "Getai Grotesk", sans-serif;
+}
+
+.custom-card .price {
+  animation: priceUpdate 0.3s ease-in-out;
+}
+
+@keyframes priceUpdate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    color: #3b82f6;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.period {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-left: 5px;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.features-list li {
+  padding: 5px 0;
+  color: white;
+  font-size: 1rem;
+
+  transition: color 0.2s ease;
+}
+.features-list span {
+  color: #38549e;
+  padding-right: 5px;
+}
+.features-list li:last-child {
+  border-bottom: none;
+}
+
+/* Custom Plan Specific Styles */
+.custom-options {
+  margin-bottom: 30px;
+}
+
+.pages-input {
+  margin-bottom: 10px;
+}
+
+.pages-input label {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.page-input {
+  width: 100%;
+  padding: 2px 16px;
+  border: 1px solid #38549e;
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: transparent;
+}
+
+.page-cost {
+  display: block;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+.features-checkboxes h4 {
+  font-size: 1rem;
+
+  color: white;
+  margin-bottom: 15px;
+}
+
+.feature-checkbox {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  padding: 8px 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.feature-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  margin-right: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.feature-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
+  border-color: none;
+}
+
+.feature-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+
+.feature-text {
+  flex: 1;
+  color: white;
+}
+
+.feature-price {
+  color: #38549e;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.get-started-btn {
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #87ceeb;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.pro-btn {
+  background: #87ceeb;
+}
+
+.custom-btn {
+  background: #87ceeb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 60px 15px;
+  }
+
+  .pricing-title {
+    font-size: 2.5rem;
+  }
+
+  .pricing-description {
+    font-size: 1.1rem;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .pro-card {
+    transform: none;
+  }
+
+  .pro-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .pricing-card {
+    padding: 30px 25px;
+  }
+
+  .price {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-title {
+    font-size: 2rem;
+  }
+
+  .pricing-description {
+    font-size: 1rem;
+  }
+
+  .pricing-card {
+    padding: 25px 20px;
+  }
+
+  .price {
+    font-size: 2.5rem;
+  }
+}

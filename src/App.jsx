@@ -13,12 +13,13 @@ import FlowingMenu from "./FlowingMenu.jsx";
 import Menu from "./Menu.jsx";
 import Contact from "./Contact.jsx";
 import Hero from "./Hero.jsx";
+import Pricing from "./Pricing.jsx";
 function App() {
   return (
     <div className="container">
       <Menu />
       <Routes>
-        {/* <Route path="/pricing" element={<PricingPage />} /> */}
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/works" element={<SelectedWork />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
@@ -29,6 +30,7 @@ function App() {
       <SelectedWork />
       <Barnding />
       <VideoSection />
+      <Pricing />
       <Contact />
       <Footer />
     </div>
