@@ -3,7 +3,7 @@ import "./SelectedWork.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import b1Image from "./assets/b1.jpg";
+import b1Image from "./assets/1.png";
 import b2Image from "./assets/b2.jpg";
 import b3Image from "./assets/b3.jpg";
 import b4Image from "./assets/b4.jpg";
