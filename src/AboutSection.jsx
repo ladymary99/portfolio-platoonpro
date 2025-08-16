@@ -60,7 +60,7 @@ const AboutSection = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top 90%",
+          start: "top 100%",
           end: "bottom 70%",
           scrub: true,
         },
@@ -89,7 +89,11 @@ const AboutSection = () => {
   }, []);
 
   const text =
-    "5 years, zero fluff—just restaurant-first design. We turn tired sites into table-booking machines and brands guests can’t scroll past.";
+    "At our core, we help restaurants and cafés grow by delivering tailored digital solutions from modern websites and menu design to social media content and full branding. " +
+    "We work with small to mid-sized food businesses and cloud kitchens aiming to boost visibility and customer engagement. " +
+    "By combining industry knowledge with creative strategy, we craft experiences that reflect each brand’s unique flavor. " +
+    "Our mission is to empower food businesses through strong digital identity, and our vision is to be the go-to creative partner in the industry. " +
+    "Whether you're launching or rebranding, we're here to bring your vision to life.";
 
   return (
     <section className="about-section">

@@ -8,48 +8,74 @@ gsap.registerPlugin(ScrollTrigger);
 const blocks = [
   {
     id: "001",
-    heading: "DIGITAL\nDESIGN",
+    heading: "Website Design & Development",
     subtitle:
-      "To be part of the positive transformation by leaving a distinctive mark on people, communities, and brands, and to see our partners make a difference.",
+      "We design and build custom, mobile-friendly websites that reflect your restaurant’s brand, improve user experience, and help drive more bookings and orders.  ",
     items: [
-      "Art Direction",
-      "Web Design",
-      "User Experience",
-      "Product Design",
-      "Design System",
+      "Custom responsive design  ",
+      "Fast loading pages  ",
+      "Online booking integration  ",
+      "Easy navigation",
     ],
   },
   {
     id: "002",
-    heading: "BRANDING\nDESIGN",
+    heading: "Branding & Visual Identity",
     subtitle:
-      "To be part of the positive transformation by leaving a distinctive mark on people, communities, and brands, and to see our partners make a difference.",
+      "From logo creation to color palettes and design elements, we craft a visual identity that tells your restaurant’s story and makes a lasting impression.  ",
     items: [
-      "Brand Identity",
       "Logo Design",
-      "Naming",
-      "Brand Story",
-      "Campaign",
+      "Color scheme development  ",
+      "Typography selection ",
+      "Brand guidelines creation  ",
     ],
   },
   {
     id: "003",
-    heading: "COMMUNICATION",
+    heading: "Social Media Management",
     subtitle:
-      "To be part of the positive transformation by leaving a distinctive mark on people, communities, and brands, and to see our partners make a difference.",
-    items: ["Brand Strategy", "Visual Identity", "Brand Experiences"],
+      "We plan, create, and manage content across platforms like Instagram, Facebook, and TikTok to boost engagement, grow your audience, and build community.  ",
+    items: [
+      "Content strategy  ",
+      "Regular posting schedules  ",
+      "Audience engagement  ",
+      "Performance analysis",
+    ],
   },
   {
     id: "004",
-    heading: "STRATEGY RESEARCH",
+    heading: "Google My Business Optimization ",
     subtitle:
-      "To be part of the positive transformation by leaving a distinctive mark on people, communities, and brands, and to see our partners make a difference.",
+      "We set up and optimize your Google profile to improve local search visibility, attract nearby customers, and increase foot traffic.  ",
     items: [
-      "User Research",
-      "Testing",
-      "Interaction Design",
-      "UI Design",
-      "Visual Design",
+      "Profile creation and setup  ",
+      "Accurate business information",
+      "Review management  ",
+      "Local SEO optimization  ",
+    ],
+  },
+  {
+    id: "005",
+    heading: "Online Menu & Ordering Systems",
+    subtitle:
+      "We create user-friendly digital menus that showcase your offerings with images and prices and make it easy for customers to view or order online.  ",
+    items: [
+      "Interactive digital menus  ",
+      "Clear pricing and descriptions  ",
+      "Easy order placement  ",
+      "Mobile accessibility  ",
+    ],
+  },
+  {
+    id: "006",
+    heading: "Photography & Content Creation ",
+    subtitle:
+      "We capture high-quality, professional photos of your food, team, and space perfect for your website, social media, and promotional materials.  ",
+    items: [
+      "Food photography  ",
+      "Interior and exterior shots  ",
+      "Staff portraits   ",
+      "Video content creation",
     ],
   },
 ];
@@ -103,7 +129,7 @@ export default function ServicesSection() {
       {/* Left sticky intro */}
       <div className="services-intro">
         <div className="content-box">
-          <div className="tag">004 - Our Services</div>
+          <div className="tag">// Our Services</div>
           <p className="lead">
             Our collaborative approach ensures that every design not only
             reflects your brand's identity but also helps it stand out in the

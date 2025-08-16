@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import SelectedWork from "./SelectedWork.jsx";
 import Footer from "./Footer.jsx";
 import "./index.css";
-import Services from "./Services.jsx";
+// import Services from "./Services.jsx";
 import Barnding from "./Barnding.jsx";
 import VideoSection from "./VideoSection.jsx";
 import AboutSection from "./AboutSection.jsx";
@@ -26,7 +26,7 @@ function App() {
       <Hero />
       <AboutSection />
       <FlowingMenu />
-      <Services />
+      {/* <Services /> */}
       <SelectedWork />
       <Barnding />
       <VideoSection />

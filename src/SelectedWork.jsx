@@ -89,10 +89,11 @@ const PortfolioSection = () => {
         <div className="container">
           <span className="main-title">Selected Works</span>
           <p className="subtitles">
-            // One-page or full-course—we build sites that seat diners 24/7.
-            Mouth-watering photos, one-click reservations, lightning mobile
-            speed, and menus that auto-sync with your POS. Your kitchen never
-            sleeps; neither should your website.
+            // A showcase of our recent projects for restaurants and cafés, each
+            crafted to highlight their unique identity. From branding to
+            websites and content, our work reflects quality, creativity, and a
+            passion for helping clients stand out and grow in a competitive
+            market.
           </p>
 
           <div className="portfolio-grid">
