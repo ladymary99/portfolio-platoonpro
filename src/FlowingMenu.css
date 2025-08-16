@@ -12,6 +12,7 @@
   position: sticky;
   top: 150px;
   align-self: start;
+  height: 1100px;
 }
 
 .tag {
@@ -56,7 +57,7 @@
   transform: translateY(40px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   background: transparent;
-  border-radius: 8px;
+
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -109,7 +110,6 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding: 16px;
-  border-radius: 8px;
 }
 
 /* Sticky first row */
@@ -152,7 +152,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #000;
+  background: #ffffff;
   opacity: 0.08;
   flex-shrink: 0;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import "./SelectedWork.css";
-import myImage1 from "./assets/design1.png";
-import myImage2 from "./assets/design2.png";
-import myImage3 from "./assets/design3.png";
+import myImage1 from "./assets/website1.png";
+import myImage2 from "./assets/website2.png";
+import myImage3 from "./assets/website3.png";
 import myImage4 from "./assets/design4.jpg";
 
 import { useEffect, useRef } from "react";

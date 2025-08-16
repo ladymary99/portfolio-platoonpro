@@ -14,12 +14,12 @@ const Pricing = () => {
   const [customPrice, setCustomPrice] = useState(99);
 
   const features = [
-    { id: "seo", label: "SEO Optimization", price: 150 },
-    { id: "ecommerce", label: "E-commerce Integration", price: 300 },
+    { id: "seo", label: "SEO Optimization", price: 49 },
+    { id: "ecommerce", label: "E-commerce Integration", price: 499 },
     { id: "blog", label: "Blog System", price: 100 },
-    { id: "analytics", label: "Advanced Analytics", price: 75 },
-    { id: "support", label: "24/7 Priority Support", price: 200 },
-    { id: "customDomain", label: "Custom Domain Setup", price: 50 },
+    { id: "analytics", label: "Advanced Analytics", price: 33 },
+    { id: "support", label: "24/7 Priority Support", price: 99 },
+    { id: "customDomain", label: "Custom Domain Setup", price: 190 },
   ];
 
   const basePrice = 99;
@@ -51,99 +51,98 @@ const Pricing = () => {
     <section className="pricing-section">
       <div className="pricing-container">
         <div className="pricing-header">
-          <h1 className="pricing-title">Choose Your Perfect Plan</h1>
-          <p className="pricing-description">
+          <h1 className="pricing-title">Right Plan for Your Business</h1>
+          {/* <p className="pricing-description">
             // Select the plan that best fits your needs. From simple websites
             to complex applications, we have the right solution for your
             business.
-          </p>
+          </p> */}
         </div>
 
         <div className="pricing-cards">
           {/* Basic Plan */}
           <div className="pricing-card">
             <div className="card-header">
-              <h3 className="plan-name">Basic Plan</h3>
-              <p className="plan-description">
-                Perfect for small businesses and personal websites
-              </p>
+              <h3 className="plan-name">Landing Page</h3>
             </div>
             <div className="price-display">
-              <span className="price">$49</span>
-              <span className="period">/month</span>
+              <span className="price">€ 399</span>
+              <span className="period">/HT</span>
             </div>
             <ul className="features-list">
               <li>
-                <span>✓</span> Up to 5 pages
+                <span>✓</span> Personalized landing page
               </li>
               <li>
-                <span>✓</span> Mobile responsive design
+                <span>✓</span> Hosting plan
               </li>
               <li>
-                <span>✓</span> Basic SEO setup
+                <span>✓</span> Creating a domain name
               </li>
               <li>
-                <span>✓</span> Contact form
+                <span>✓</span> SEO optimization
               </li>
               <li>
-                <span>✓</span>SSL certificate
+                <span>✓</span>Create & Optimize your google business profile
+                (GMB)
               </li>
               <li>
-                <span>✓</span> Monthly backups
+                <span>✓</span> Responsive design
+              </li>
+              <li>
+                <span>✓</span> 1 Year Support
               </li>
             </ul>
-            <button className="get-started-btn">Get Started</button>
+            <button className="get-started-btn">Buy Now</button>
           </div>
 
           {/* Pro Plan */}
           <div className="pricing-card pro-card">
-            <div className="popular-badge">Most Popular</div>
+            {/* <div className="popular-badge">Most Popular</div> */}
             <div className="card-header">
-              <h3 className="plan-name">Pro Plan</h3>
-              <p className="plan-description">
-                Ideal for growing businesses with advanced needs
-              </p>
+              <h3 className="plan-name">Site Vitrine</h3>
             </div>
             <div className="price-display">
-              <span className="price">$99</span>
-              <span className="period">/month</span>
+              <span className="price">€ 799</span>
+              <span className="period">/HT</span>
             </div>
             <ul className="features-list">
               <li>
-                <span>✓</span> Up to 15 pages
+                <span>✓</span> Personalized website
               </li>
               <li>
-                <span>✓</span> Advanced SEO optimization
+                <span>✓</span> Hosting plan
               </li>
               <li>
-                <span>✓</span> E-commerce ready
+                <span>✓</span> Creating a domain name
               </li>
               <li>
-                <span>✓</span> Blog integration
+                <span>✓</span> SEO optimization
               </li>
               <li>
-                <span>✓</span> Analytics dashboard
+                <span>✓</span> Create & Optimize your google business profile
+                (GMB)
               </li>
               <li>
-                <span>✓</span> Priority support
+                <span>✓</span> Responsive design
               </li>
               <li>
-                <span>✓</span> Weekly backups
+                <span>✓</span> 1 Year Maintenance
               </li>
             </ul>
-            <button className="get-started-btn pro-btn">Get Started</button>
+            <button className="get-started-btn pro-btn">Buy Now</button>
           </div>
 
           {/* Custom Plan */}
           <div className="pricing-card custom-card">
             <div className="card-header">
-              <h3 className="plan-name">Custom Plan</h3>
-              <p className="plan-description">
+              <h3 className="plan-name">Custom Site</h3>
+              {/* <p className="plan-description">
                 Tailored solution for your unique requirements
-              </p>
+              </p> */}
             </div>
             <div className="price-display">
-              <span className="price">${customPrice}</span>
+              <span className="price">€{customPrice}</span>
               <span className="period">/one-time</span>
             </div>
 
@@ -175,14 +174,14 @@ const Pricing = () => {
                     <span className="checkmark"></span>
                     <span className="feature-text">
                       {feature.label}
-                      <span className="feature-price">+${feature.price}</span>
+                      <span className="feature-price">+€{feature.price}</span>
                     </span>
                   </label>
                 ))}
               </div>
             </div>
 
-            <button className="get-started-btn custom-btn">Get Started</button>
+            <button className="get-started-btn custom-btn">Buy Now</button>
           </div>
         </div>
       </div>

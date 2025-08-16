@@ -3,10 +3,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hero.css";
 
-import firstImage from "./assets/design1.png"; // Top big image
-import overlayImage from "./assets/b1.jpg"; // small overlay on first image
-import glassBackground from "./assets/b2.jpg"; // glassy box background
-import cornerImage from "./assets/b3.jpg"; // right image in glassy box
+import firstImage from "./assets/website1.png"; // Top big image
+import overlayImage from "./assets/book.png"; // small overlay on first image
+import glassBackground from "./assets/june3.png"; // glassy box background
+import cornerImage from "./assets/june5.png"; // right image in glassy box
 import videoSrc from "./assets/v4.mp4"; // video for glassy box
 
 gsap.registerPlugin(ScrollTrigger);
@@ -101,7 +101,11 @@ export default function Hero() {
         {/* RIGHT COLUMN */}
         <div className="right-col" ref={rightRef}>
           <h1>We Make your restaurant online</h1>
-          <p>Modern designs, smooth animations, and engaging visuals.</p>
+          <p>
+            Elevating restaurant brands through elegant design, powerful
+            storytelling, and digital experiences that leave a lasting
+            impression.
+          </p>
           <button className="cta-btn">
             <span>Digital solutions</span>
             <div className="cta-icon">

@@ -3,12 +3,47 @@ import "./SelectedWork.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import b1Image from "./assets/1.png";
-import b2Image from "./assets/b2.jpg";
-import b3Image from "./assets/b3.jpg";
-import b4Image from "./assets/b4.jpg";
-import b5Image from "./assets/b5.jpg";
-import b6Image from "./assets/b6.jpg";
+import b1Image from "./assets/restu1.png";
+import brand1 from "./assets/restu2.png";
+import brand2 from "./assets/restu3.png";
+import brand3 from "./assets/restu4.png";
+import brand4 from "./assets/restu5.png";
+
+import b2Image from "./assets/vona1.png";
+import vona from "./assets/vona2.png";
+import vona2 from "./assets/vona3.png";
+import vona3 from "./assets/vona4.png";
+import vona4 from "./assets/vona5.png";
+import vona5 from "./assets/vona6.png";
+
+import b3Image from "./assets/nostrum.png";
+import no1 from "./assets/nostrum2.png";
+import no2 from "./assets/nostrum3.png";
+import no3 from "./assets/nostrum4.png";
+import no4 from "./assets/nostrum5.png";
+import no5 from "./assets/nostrum6.png";
+
+import b4Image from "./assets/ciaco.png";
+import ciaco1 from "./assets/ciaco2.png";
+import ciaco2 from "./assets/ciaco3.png";
+import ciaco3 from "./assets/ciaco4.png";
+import ciaco4 from "./assets/ciaco5.png";
+import ciaco5 from "./assets/ciaco6.png";
+
+import b5Image from "./assets/june.png";
+import june1 from "./assets/june2.png";
+import june2 from "./assets/june3.png";
+import june3 from "./assets/june4.png";
+import june4 from "./assets/june5.png";
+import june5 from "./assets/june6.png";
+
+import b6Image from "./assets/the.png";
+import the1 from "./assets/the2.png";
+import the2 from "./assets/the3.png";
+import the3 from "./assets/the4.png";
+import the4 from "./assets/the5.png";
+import the5 from "./assets/the6.png";
+
 import videoSample from "./assets/v2.mp4"; // Your video file
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,48 +53,48 @@ const imageData = [
     src: b1Image,
     title: "Branding Project",
     desc: "We developed a stunning branding experience with rich visuals, detailed identity work, and a multi-platform presentation.",
-    col1: [b1Image, b2Image, b3Image],
-    col2: [b4Image, b5Image],
+    col1: [brand1, brand2, brand3],
+    col2: [brand4, b1Image],
     video: videoSample,
   },
   {
     src: b2Image,
-    title: "Luxury Skincare",
+    title: "VONA Branding",
     desc: "Elegant and minimalistic design for a premium skincare brand.",
-    col1: [b2Image, b3Image, b6Image],
-    col2: [b1Image, b4Image],
+    col1: [vona, vona2, vona3],
+    col2: [vona4, vona5],
     video: videoSample,
   },
   {
     src: b3Image,
     title: "Creative Campaign",
     desc: "A bold and colorful approach to brand storytelling.",
-    col1: [b3Image, b4Image, b5Image],
-    col2: [b6Image, b1Image],
+    col1: [no1, no2, no3],
+    col2: [no4, no5],
     video: videoSample,
   },
   {
     src: b4Image,
     title: "Fashion Identity",
     desc: "A modern and sleek visual identity for a fashion startup.",
-    col1: [b4Image, b5Image, b6Image],
-    col2: [b1Image, b2Image],
+    col1: [ciaco1, ciaco2, ciaco3],
+    col2: [ciaco4, ciaco5],
     video: videoSample,
   },
   {
     src: b5Image,
     title: "Product Packaging",
     desc: "Eye-catching packaging design that makes your product pop off the shelf.",
-    col1: [b5Image, b1Image, b3Image],
-    col2: [b2Image, b4Image],
+    col1: [june1, june2, june3, june4],
+    col2: [june5],
     video: videoSample,
   },
   {
     src: b6Image,
     title: "Event Branding",
     desc: "Immersive branding for unforgettable experiences.",
-    col1: [b6Image, b2Image, b4Image],
-    col2: [b1Image, b3Image],
+    col1: [the1, the2, the3],
+    col2: [the4, the5],
     video: videoSample,
   },
 ];
@@ -201,10 +236,12 @@ const Branding = () => {
 
           <div className="branding-subtitle-bottom">
             <p className="section-subtitle">
-              // We cook up logos, color palettes, menus, and signage that feel
-              like the first bite—unforgettable. From food-truck charm to
-              fine-dining prestige, we plate your story so guests taste it
-              before they even sit down.
+              // Your brand is more than just a logo it's the feeling people
+              remember. We craft bold, consistent identities that tell your
+              story and set you apart. A powerful brand captures your essence
+              and connects emotionally with your audience through thoughtful
+              design, meaningful storytelling, and visuals that leave a lasting
+              impression.
             </p>
           </div>
         </div>

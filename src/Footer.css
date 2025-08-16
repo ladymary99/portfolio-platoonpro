@@ -1,5 +1,5 @@
 .footer {
-  background: black;
+  background: linear-gradient(135deg, #2c5aa0 50%, #87ceeb 100%);
   color: white;
   font-family: "Arial", sans-serif;
 }
@@ -26,16 +26,13 @@
 
   z-index: 1;
   font-family: "Getai Grotesk", sans-serif;
-  background: linear-gradient(to right, #ebedff, #38549e, #020c1b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+
+  color: #020c1b;
   text-align: center;
 }
 
 .get-in-touch-btn {
-  background: linear-gradient(135deg, #000000 0%, #2c5aa0 50%, #87ceeb 100%);
+  background: #020c1b;
   border: none;
   padding: 14px 50px;
   border-radius: 30px;
@@ -76,7 +73,7 @@
   margin-top: 25px;
   margin-bottom: 25px;
   margin-left: 10px;
-  color: #6b7684;
+  color: #020c1b;
   text-transform: uppercase;
 }
 
@@ -106,7 +103,7 @@
 }
 
 .social-link:hover {
-  color: #87ceeb;
+  color: #020c1b;
 }
 
 @media (max-width: 768px) {

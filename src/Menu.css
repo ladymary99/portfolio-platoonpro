@@ -11,14 +11,11 @@
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 .navbar.glassy {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .menu-btn {
-  background: linear-gradient(135deg, #2c5aa0 50%, #87ceeb 100%);
+  background: #2c5aa0;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0);
@@ -37,9 +34,8 @@
 
 .menu-overlay {
   position: fixed;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 999;
   display: flex;
@@ -86,10 +82,10 @@
 }
 
 .social-icon {
-  border: 1px solid #94a3b8;
+  border: 1px solid #2c5aa0;
   padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: #2c5aa0;
 }

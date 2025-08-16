@@ -45,7 +45,7 @@
 
 .mockup-container {
   width: 100%;
-  height: 350px;
+  height: auto;
   overflow: hidden;
 }
 
@@ -170,10 +170,11 @@ span {
 .item-label {
   background: transparent;
   border: 1px solid #94a3b8;
+  width: 140px;
   padding: 5px 6px;
   border-radius: 20px;
   font-size: 1rem;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #94a3b8;
   transition: all 0.3s ease;
 }
@@ -325,7 +326,7 @@ span {
 /* Hover Button */
 .hover-button {
   position: fixed;
-  background: linear-gradient(135deg, #2c5aa0 50%, #87ceeb 100%);
+  background: #2c5aa0;
   color: white;
   padding: 8px 14px;
   border-radius: 0 20px 0 20px;
@@ -351,19 +352,23 @@ span {
 }
 
 .modal-content {
-  background: #38549e;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid #94a3b862;
   padding: 20px;
   border-radius: 20px;
   max-width: 800px; /* smaller width */
   max-height: 80vh; /* prevent too tall */
   overflow-y: auto; /* scroll if content overflows */
   width: 90%; /* responsive width */
-  text-align: left;
+  align-items: center;
   position: relative;
 }
 
 .modal-content h3 {
   margin-bottom: 10px;
+  font-size: 3rem;
+  font-family: "Getai Grotesk", sans-serif;
 }
 
 .modal-content p {
@@ -380,6 +385,7 @@ span {
   border: none;
   font-size: 22px;
   cursor: pointer;
+  color: #38549e;
 }
 
 /* Modal Grid Layout */
@@ -398,16 +404,15 @@ span {
 .modal-col img {
   width: 100%;
   border-radius: 8px;
-  max-width: 300px;
-  height: 300px;
-  border-radius: 0 20px 0 20px;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .modal-col video {
   width: 100%;
   border-radius: 8px;
-  max-width: 300px;
-  height: 300px;
+
+  height: 100%;
   border-radius: 0 20px 0 20px;
 }
 

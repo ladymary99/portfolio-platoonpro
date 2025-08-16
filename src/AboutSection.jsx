@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./AboutSection.css";
-import astronaut from "./assets/b3.jpg";
+import astronaut from "./assets/vona6.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +91,6 @@ const AboutSection = () => {
   const text =
     "At our core, we help restaurants and cafés grow by delivering tailored digital solutions from modern websites and menu design to social media content and full branding. " +
     "We work with small to mid-sized food businesses and cloud kitchens aiming to boost visibility and customer engagement. " +
-    "By combining industry knowledge with creative strategy, we craft experiences that reflect each brand’s unique flavor. " +
     "Our mission is to empower food businesses through strong digital identity, and our vision is to be the go-to creative partner in the industry. " +
     "Whether you're launching or rebranding, we're here to bring your vision to life.";
 

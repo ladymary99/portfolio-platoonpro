@@ -107,7 +107,7 @@ export default function ServicesSection() {
     const secondRow = rightSection.querySelector(".second-row");
     ScrollTrigger.create({
       trigger: secondRow,
-      start: "top 100%", // <-- second row triggers later
+      start: "top 100%",
       end: "bottom top",
       onEnter: () => rightSection.classList.add("sticky-active"),
       onEnterBack: () => rightSection.classList.add("sticky-active"),
