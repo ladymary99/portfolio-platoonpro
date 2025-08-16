@@ -1,7 +1,6 @@
 .hero {
   min-height: 100vh;
-  height: 100vh;
-  padding: 100px 32px 50px 32px;
+  padding: 80px 16px;
 
   display: flex;
   align-items: center;
@@ -22,21 +21,20 @@
 .main-space {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 100px 32px 50px 32px;
+  padding: 50px 16px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 24px;
   align-items: center;
 }
 
+/* LEFT COLUMN */
 .left-col {
   display: grid;
-  grid-template-columns: 2fr;
-  grid-auto-rows: auto;
-
   gap: 24px;
 }
 
+/* Boxes */
 .box {
   border-radius: 16px;
   overflow: hidden;
@@ -52,24 +50,22 @@
   display: block;
 }
 
-/* Hover blur for other boxes */
-.box:hover ~ .box,
-.box:hover {
-  filter: blur(0px); /* actual effect handled in JS */
-}
-
-/* Big image top */
+/* Big image */
 .big-image {
   position: relative;
-  height: 280px;
-  width: 500px;
+  width: 100%; /* ✅ fluid */
+  max-width: 500px; /* ✅ keep original look on large screens */
+  height: auto;
+  aspect-ratio: 5 / 3; /* ✅ keeps proportion */
 }
 .big-image .overlay-img {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 200px;
-  height: 100px;
+  width: 40%; /* ✅ scales with parent */
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 2 / 1;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   z-index: 2;
@@ -78,8 +74,9 @@
 /* Glassy box */
 .glass {
   position: relative;
-  height: 250px;
-  width: 600px;
+  width: 100%; /* ✅ fluid */
+  max-width: 600px;
+  min-height: 220px;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
 
@@ -99,28 +96,23 @@
   border-radius: 16px;
 }
 
-/* Corner boxes inside glassy box */
+/* Corner boxes */
 .corner-box {
   position: relative;
-  width: 20%;
-  height: 40%;
+  width: 25%;
+  height: auto;
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   overflow: hidden;
   z-index: 1;
 }
 
-/* Video */
-.video-box video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/* Video button */
 .play-btn {
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
   font-size: 18px;
@@ -129,24 +121,16 @@
   cursor: pointer;
 }
 
-/* Image */
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
 /* Right column */
 .right-col h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem); /* ✅ scales */
   line-height: 1.2;
   font-family: "Getai Grotesk", sans-serif;
   color: #fff;
 }
 
 .right-col p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* ✅ scales */
   margin-bottom: 30px;
   line-height: 1.5;
   color: #ddd;
@@ -185,28 +169,47 @@
   transform: rotate(45deg);
 }
 
-@media (max-width: 768px) {
+/* ✅ Responsive */
+@media (max-width: 1024px) {
   .main-space {
     grid-template-columns: 1fr;
-    gap: 24px;
+    text-align: center;
   }
+
+  .glass {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
   .big-image {
-    height: 220px;
+    max-width: 100%;
   }
+
   .glass {
     flex-direction: column;
-    height: auto;
+    align-items: stretch;
     padding: 8px;
   }
+
   .corner-box {
-    width: 100%;
-    height: 120px;
+    width: 50%;
+    aspect-ratio: 16 / 9;
     margin-bottom: 8px;
   }
+
   .play-btn {
-    bottom: 4px;
-    right: 4px;
-    font-size: 16px;
+    font-size: 14px;
     padding: 4px 6px;
+  }
+
+  .right-col h1 {
+    font-size: 2rem;
+  }
+
+  .right-col p {
+    font-size: 1rem;
   }
 }

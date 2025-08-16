@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./SelectedWork.css";
 import gsap from "gsap";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import b1Image from "./assets/restu1.png";
@@ -44,7 +46,7 @@ import the3 from "./assets/the4.png";
 import the4 from "./assets/the5.png";
 import the5 from "./assets/the6.png";
 
-import videoSample from "./assets/v2.mp4"; // Your video file
+import videoSample from "./assets/v2.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 

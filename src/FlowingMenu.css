@@ -85,6 +85,10 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .services-intro {
+    width: 300px;
+    height: 100px;
+  }
   .services-section {
     grid-template-columns: 1fr;
     padding: 28px;
@@ -94,7 +98,9 @@
     flex-direction: column;
     gap: 20px;
   }
-
+  .service-block {
+    padding: 0;
+  }
   .services-row {
     grid-template-columns: 1fr;
   }
@@ -102,6 +108,15 @@
   .first-row {
     position: relative;
     top: auto;
+  }
+  .icon-dot {
+    display: none;
+  }
+  .subtitle {
+    font-size: 10px;
+  }
+  .title {
+    font-size: 18px;
   }
 }
 /* Rows */

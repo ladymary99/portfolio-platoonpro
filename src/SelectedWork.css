@@ -170,7 +170,7 @@ span {
 .item-label {
   background: transparent;
   border: 1px solid #94a3b8;
-  width: 140px;
+
   padding: 5px 6px;
   border-radius: 20px;
   font-size: 1rem;
@@ -221,7 +221,7 @@ span {
 }
 .branding-subtitle-bottom {
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   left: 55px;
   width: 350px;
 }
@@ -254,7 +254,7 @@ span {
     gap: 30px;
   }
   .mockup-container {
-    height: 250px;
+    height: 200px;
     overflow: hidden;
   }
   .main-title {
@@ -291,6 +291,9 @@ span {
 
   .item-label {
     font-size: 0.8rem;
+  }
+  .subtitles {
+    width: 300px;
   }
 }
 
