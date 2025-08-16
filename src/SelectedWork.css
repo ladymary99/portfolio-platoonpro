@@ -268,46 +268,86 @@ span {
   .branding-main-title {
     font-size: 4rem;
   }
+}
+/* Tablet and mobile */
+@media (max-width: 768px) {
   .branding-layout {
-    height: auto; /* let it expand with items */
+    height: auto; /* let content grow */
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
     justify-content: center;
-    padding: 20px;
+    gap: 20px;
+    padding: 5px;
+  }
+
+  .branding-items-scattered {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px;
+    position: relative;
+    height: auto;
+    width: 100%;
   }
 
   .branding-item {
-    position: relative; /* no more absolute for mobile */
-    transform: scale(1); /* keep full size */
-    width: 45%; /* 2 items per row */
+    position: relative !important;
+    width: 100%;
+    max-width: 200px;
     height: auto;
+    transform: none !important;
   }
 
-  .branding-item img {
+  .branding-image {
     width: 100%;
     height: auto;
   }
 
   .item-label {
     font-size: 0.8rem;
+    margin-top: 8px;
+    text-align: center;
   }
-  .subtitles {
-    width: 300px;
+
+  .branding-subtitle-bottom {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .item-2 {
+    top: 0%;
+    left: 0;
+  }
+  .item-3 {
+    top: 0;
+    left: 0;
+  }
+  .item-4 {
+    top: 0;
+    right: 0;
+  }
+  .item-5 {
+    bottom: 0;
+    right: 0;
+  }
+  .item-6 {
+    bottom: 0%;
+    right: 0;
   }
 }
 
+/* Very small phones */
 @media (max-width: 480px) {
-  .main-title {
-    font-size: 2rem;
+  .branding-item {
+    width: 100%;
   }
 
   .branding-main-title {
-    font-size: 3rem;
-  }
-
-  .branding-layout {
-    height: 300px;
+    font-size: 2.5rem;
+    text-align: center;
   }
 }
 
