@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hero.css";
 
-import firstImage from "./assets/website1.png"; // Top big image
-import overlayImage from "./assets/book.png"; // small overlay on first image
-import glassBackground from "./assets/june3.png"; // glassy box background
-import cornerImage from "./assets/june5.png"; // right image in glassy box
-import videoSrc from "./assets/v4.mp4"; // video for glassy box
+import firstImage from "./assets/website1.png";
+import overlayImage from "./assets/book.png";
+import glassBackground from "./assets/june3.png";
+import cornerImage from "./assets/june5.png";
+import videoSrc from "./assets/v4.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,25 +108,27 @@ export default function Hero() {
             storytelling, and digital experiences that leave a lasting
             impression.
           </p>
-          <button className="cta-btn">
-            <span>Digital solutions</span>
-            <div className="cta-icon">
-              <svg
-                width="16"
-                height="16"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 17l9.2-9.2M17 17V7H7"
-                />
-              </svg>
-            </div>
-          </button>
+          <Link to="/contactus">
+            <button className="cta-btn">
+              <span>Digital solutions</span>
+              <div className="cta-icon">
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M7 17l9.2-9.2M17 17V7H7"
+                  />
+                </svg>
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

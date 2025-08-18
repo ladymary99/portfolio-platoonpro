@@ -62,22 +62,28 @@ const Footer = () => {
               <p>info@platoonpro.com</p>
             </div>
 
-            <div className="footer-column">
+            {/* <div className="footer-column">
               <h3>Get In Touch</h3>
               <p>5 parv. alan turing</p>
               <p>75013 paris, france</p>
-            </div>
+            </div> */}
 
             <div className="footer-column">
               <h3>Social</h3>
               <div className="social-links">
-                <a href="#" className="social-link">
+                <a
+                  href="https://www.instagram.com/platoonproo"
+                  className="social-link"
+                >
                   INTAGRAM
                 </a>
                 <a href="#" className="social-link">
                   BEHANCE
                 </a>
-                <a href="#" className="social-link">
+                <a
+                  href="https://www.linkedin.com/company/platoonpro/"
+                  className="social-link"
+                >
                   LINKEDIN
                 </a>
               </div>

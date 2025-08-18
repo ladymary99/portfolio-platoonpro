@@ -22,6 +22,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/works" element={<SelectedWork />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contactus" element={<Contact />} />
       </Routes>
       <Hero />
       <AboutSection />

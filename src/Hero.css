@@ -123,14 +123,14 @@
 
 /* Right column */
 .right-col h1 {
-  font-size: clamp(2rem, 5vw, 3rem); /* ✅ scales */
+  font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.2;
   font-family: "Getai Grotesk", sans-serif;
   color: #fff;
 }
 
 .right-col p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem); /* ✅ scales */
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   margin-bottom: 30px;
   line-height: 1.5;
   color: #ddd;
@@ -149,6 +149,7 @@
   transition: all 0.3s ease;
   font-size: 16px;
   backdrop-filter: blur(20px);
+  text-decoration: none;
 }
 
 .cta-icon {
@@ -163,13 +164,14 @@
   backdrop-filter: blur(10px);
   background: linear-gradient(135deg, #2c5aa0 50%, #87ceeb 100%);
 }
-
+Link {
+  text-decoration: none;
+}
 .cta-btn:hover .cta-icon {
   background: rgba(255, 255, 255, 0.25);
   transform: rotate(45deg);
 }
 
-/* ✅ Responsive */
 @media (max-width: 1024px) {
   .main-space {
     grid-template-columns: 1fr;
