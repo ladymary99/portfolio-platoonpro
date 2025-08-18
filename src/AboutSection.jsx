@@ -68,22 +68,25 @@ const AboutSection = () => {
     );
 
     // List items slide + fade
-    gsap.fromTo(
-      listRef.current.querySelectorAll("li"),
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.15,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: listRef.current,
-          start: "top 95%",
-          end: "bottom 75%",
-          scrub: true,
-        },
-      }
-    );
+    // List items slide + fade
+    if (listRef.current) {
+      gsap.fromTo(
+        listRef.current.querySelectorAll("li"),
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: listRef.current,
+            start: "top 95%",
+            end: "bottom 75%",
+            scrub: true,
+          },
+        }
+      );
+    }
 
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }, []);
@@ -109,14 +112,14 @@ const AboutSection = () => {
               </span>
             ))}
           </p>
-          <ul className="info-list" ref={listRef}>
+          {/* <ul className="info-list" ref={listRef}>
             <li>
               <span className="number">01.</span> Digital Marketing Agency
             </li>
             <li>
               <span className="number">02.</span> From (Paris, France)
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </section>

@@ -3,18 +3,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-
   margin: 4rem auto;
   padding: 0 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendly-inline-wrapper {
   height: 500px;
   border-radius: 15px;
   overflow: hidden;
+  width: 400px;
 }
 
-/* ---------- Left – Contact Form ---------- */
 .contact-form h2 {
   margin-top: 0;
   margin-bottom: 1rem;

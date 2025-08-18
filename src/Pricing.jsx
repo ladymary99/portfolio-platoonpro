@@ -11,7 +11,7 @@ const Pricing = () => {
     customDomain: false,
   });
   const [pageCount, setPageCount] = useState(1);
-  const [customPrice, setCustomPrice] = useState(99);
+  const [customPrice, setCustomPrice] = useState(25);
 
   const features = [
     { id: "seo", label: "SEO Optimization", price: 49 },
@@ -22,7 +22,7 @@ const Pricing = () => {
     { id: "customDomain", label: "Custom Domain Setup", price: 190 },
   ];
 
-  const basePrice = 99;
+  const basePrice = 25;
   const pricePerPage = 25;
 
   useEffect(() => {
