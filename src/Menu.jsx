@@ -72,7 +72,7 @@ export default function Navbar() {
             {/* Social Icons */}
             <div className="menu-socials">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/platoonproo"
                 target="_blank"
                 rel="noreferrer"
                 className="social-icon"
@@ -80,7 +80,7 @@ export default function Navbar() {
                 IG
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/platoonpro/"
                 target="_blank"
                 rel="noreferrer"
                 className="social-icon"

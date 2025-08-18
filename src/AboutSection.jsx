@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./AboutSection.css";
-import astronaut from "./assets/vona6.png";
+import astronaut from "./assets/bg.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -105,6 +105,52 @@
 .social-link:hover {
   color: #020c1b;
 }
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.footer-form input,
+.footer-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #020c1b;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 14px;
+  padding: 12px;
+  outline: none;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+  color: #020c1b;
+}
+
+.footer-form input:focus,
+.footer-form textarea:focus {
+  border-color: #2c5aa0;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.footer-form textarea {
+  resize: none;
+}
+
+/* Error / Success messages */
+.error-msg {
+  color: #f87171; /* red-400 */
+  font-size: 14px;
+}
+
+.success-msg {
+  color: #34d399; /* green-400 */
+  font-size: 14px;
+}
 
 @media (max-width: 768px) {
   .footer-content {
