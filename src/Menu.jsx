@@ -79,6 +79,7 @@ export default function Navbar() {
               >
                 IG
               </a>
+              
               <a
                 href="https://www.linkedin.com/company/platoonpro/"
                 target="_blank"
