@@ -37,7 +37,12 @@ const PortfolioMockup = ({
             &times;
           </span>
 
-          <div className={`mockup ${currentDevice}`}>
+          {/* Apply separate class per device */}
+          <div
+            className={
+              currentDevice === "laptop" ? "laptop-mockup" : "phone-mockup"
+            }
+          >
             <img
               src={currentDevice === "laptop" ? laptopMockup : phoneMockup}
               alt={`${currentDevice} frame`}

@@ -39,15 +39,14 @@
   z-index: 10000;
 }
 
-/* Mockup in modal */
-.mockup {
+/* .mockup {
   position: relative;
-  width: 50vw; /* ✅ fixed at 50% of viewport width */
-  height: 50vh; /* ✅ fixed at 50% of viewport height */
+  width: 50vw;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* Frame image */
 .mockup .frame {
@@ -61,8 +60,8 @@
   position: absolute;
   top: 10%; /* tweak for your mockup */
   left: 6%;
-  width: 88%;
-  height: 78%;
+  width: 85%;
+  height: 70%;
   overflow-y: scroll;
   border-radius: 8px;
   background: #000;
@@ -73,7 +72,63 @@
   height: auto;
   display: block;
 }
-.modal-content {
-  width: 60%; /* bigger width */
-  height: 90%; /* taller */
+
+/* Laptop Mockup */
+.laptop-mockup {
+  position: relative;
+  width: 750px; /* Laptop frame width */
+  height: 700px; /* Laptop frame height */
+}
+
+.laptop-mockup .frame {
+  width: 100%;
+  height: auto;
+}
+
+.laptop-mockup .screen {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  position: absolute;
+  top: 19%;
+  left: 7%;
+  width: 86%;
+  height: 70%;
+  overflow-y: scroll;
+  border-radius: 20px;
+  background: #000;
+}
+
+.laptop-mockup .screen img {
+  width: 100%;
+  height: auto;
+}
+
+/* Phone Mockup */
+.phone-mockup {
+  position: relative;
+  width: 370px; /* Phone frame width */
+  height: 600px; /* Phone frame height */
+}
+
+.phone-mockup .frame {
+  width: 100%;
+  height: auto;
+}
+
+.phone-mockup .screen {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  position: absolute;
+  top: 12%;
+  left: 17%;
+  width: 66%;
+  height: 86%;
+  overflow-y: scroll;
+  border-radius: 37px;
+  background: #000;
+}
+
+.phone-mockup .screen img {
+  width: 100%;
+  height: auto;
 }
