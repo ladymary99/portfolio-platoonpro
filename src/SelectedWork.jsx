@@ -1,5 +1,12 @@
 import React from "react";
 import "./SelectedWork.css";
+
+import PortfolioMockup from "./PortfolioMockup";
+import laptopMockup from "./assets/laptop.png";
+import phoneMockup from "./assets/phone.png";
+import desktopImg from "./assets/model1.png";
+import mobileImg from "./assets/model2.png";
+
 import myImage1 from "./assets/website1.png";
 import myImage2 from "./assets/website2.png";
 import myImage3 from "./assets/website3.png";
@@ -132,6 +139,12 @@ const PortfolioSection = () => {
             ))}
           </div>
         </div>
+        <PortfolioMockup
+          laptopMockup={laptopMockup}
+          phoneMockup={phoneMockup}
+          desktopImg={desktopImg}
+          mobileImg={mobileImg}
+        />
       </div>
     </div>
   );

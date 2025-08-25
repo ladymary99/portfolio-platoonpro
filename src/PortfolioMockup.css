@@ -1,0 +1,79 @@
+/* Portfolio page thumbnails */
+.portfolio-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 250px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Popup modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Mockup in modal */
+.mockup {
+  position: relative;
+  width: 50vw; /* ✅ fixed at 50% of viewport width */
+  height: 50vh; /* ✅ fixed at 50% of viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Frame image */
+.mockup .frame {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Screen area – aligns to transparent cutout of your PNG */
+.mockup .screen {
+  position: absolute;
+  top: 10%; /* tweak for your mockup */
+  left: 6%;
+  width: 88%;
+  height: 78%;
+  overflow-y: scroll;
+  border-radius: 8px;
+  background: #000;
+}
+
+.mockup .screen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.modal-content {
+  width: 60%; /* bigger width */
+  height: 90%; /* taller */
+}
