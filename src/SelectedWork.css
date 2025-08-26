@@ -117,6 +117,26 @@ span {
 .mockup-container:hover .custom-cursor {
   opacity: 1;
 }
+.more-btn-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.more-btn {
+  background: #2c5aa0;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.more-btn:hover {
+  background: #1e3f70;
+  transform: translateY(-2px);
+}
 
 /* Branding Section */
 .branding-section {

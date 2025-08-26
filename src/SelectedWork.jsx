@@ -1,18 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./SelectedWork.css";
-
-import PortfolioMockup from "./PortfolioMockup";
-import laptopMockup from "./assets/laptop.png";
-import phoneMockup from "./assets/phone.png";
-import desktopImg from "./assets/model1.png";
-import mobileImg from "./assets/model2.png";
 
 import myImage1 from "./assets/website1.png";
 import myImage2 from "./assets/website2.png";
 import myImage3 from "./assets/website3.png";
 import myImage4 from "./assets/design4.jpg";
+import myImage5 from "./assets/website3.png";
+import myImage6 from "./assets/website2.png";
 
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -20,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PortfolioSection = () => {
   const portfolioRef = useRef(null);
+  const [showMore, setShowMore] = useState(false);
 
   const portfolioItems = [
     {
@@ -31,26 +27,44 @@ const PortfolioSection = () => {
     },
     {
       id: 2,
-      title: "MAMIAMO Italian Restuarant",
-      tags: ["Branding", "figma", "React"],
+      title: "MAMIAMO Italian Restaurant",
+      tags: ["Branding", "Figma", "React"],
       mockupImage: myImage2,
       description: "Confidence - Shop now",
     },
     {
       id: 3,
-      title: "Restuarant",
+      title: "Restaurant",
       tags: ["Figma", "Branding", "React"],
       mockupImage: myImage3,
       description: "DRINKS - About us, Our menu, Reservations, Contact us",
     },
     {
       id: 4,
-      title: "Cazador Restuarant",
+      title: "Cazador Restaurant",
       tags: ["Branding", "Wordpress"],
       mockupImage: myImage4,
       description: "Jewelry Collection",
     },
   ];
+
+  const morePortfolioItems = [
+    {
+      id: 5,
+      title: "Bakery Landing Page",
+      tags: ["UI/UX", "Figma"],
+      mockupImage: myImage5,
+      description: "Fresh Bread & Pastries",
+    },
+    {
+      id: 6,
+      title: "Coffee Shop Website",
+      tags: ["React", "Tailwind"],
+      mockupImage: myImage6,
+      description: "Order your favorite coffee online",
+    },
+  ];
+
   const handleMouseMove = (e, id) => {
     const cursor = document.getElementById(`cursor-${id}`);
     if (!cursor) return;
@@ -59,7 +73,6 @@ const PortfolioSection = () => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // Move the custom cursor to the mouse position within the container
     cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
     cursor.style.opacity = "1";
   };
@@ -81,7 +94,7 @@ const PortfolioSection = () => {
             trigger: img,
             start: "top 80%",
             end: "bottom 60%",
-            scrub: true, // smooth scroll sync
+            scrub: true,
           },
         }
       );
@@ -103,6 +116,7 @@ const PortfolioSection = () => {
             market.
           </p>
 
+          {/* Initial Projects */}
           <div className="portfolio-grid">
             {portfolioItems.map((item) => (
               <div
@@ -118,7 +132,7 @@ const PortfolioSection = () => {
                     className="mockup-image"
                   />
                   <div className="custom-cursor" id={`cursor-${item.id}`}>
-                    View More Projects
+                    View Project
                   </div>
                 </div>
 
@@ -138,13 +152,53 @@ const PortfolioSection = () => {
               </div>
             ))}
           </div>
+
+          {/* More Projects (revealed on button click) */}
+          {showMore && (
+            <div className="portfolio-grid">
+              {morePortfolioItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="portfolio-item"
+                  onMouseMove={(e) => handleMouseMove(e, item.id)}
+                  onMouseLeave={() => handleMouseLeave(item.id)}
+                >
+                  <div className="mockup-container">
+                    <img
+                      src={item.mockupImage}
+                      alt={item.description}
+                      className="mockup-image"
+                    />
+                    <div className="custom-cursor" id={`cursor-${item.id}`}>
+                      View Project
+                    </div>
+                  </div>
+
+                  <div className="item-info">
+                    <div className="item-details">
+                      <span className="bullet">•</span>
+                      <span className="item-title">{item.title}</span>
+                    </div>
+                    <div className="tags">
+                      {item.tags.map((tag, index) => (
+                        <span key={index} className="tagworks">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* More Projects Button */}
+          <div className="more-btn-wrapper">
+            <button className="more-btn" onClick={() => setShowMore(!showMore)}>
+              {showMore ? "Show Less" : "More Projects"}
+            </button>
+          </div>
         </div>
-        <PortfolioMockup
-          laptopMockup={laptopMockup}
-          phoneMockup={phoneMockup}
-          desktopImg={desktopImg}
-          mobileImg={mobileImg}
-        />
       </div>
     </div>
   );
