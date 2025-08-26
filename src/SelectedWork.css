@@ -120,14 +120,18 @@ span {
 .more-btn-wrapper {
   text-align: center;
   margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .more-btn {
   background: #2c5aa0;
+  border-radius: 0 20px 0 20px;
   color: white;
   padding: 12px 28px;
-  border-radius: 30px;
+  font-family: "Getai Grotesk", sans-serif;
   font-size: 1rem;
+
   border: none;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
