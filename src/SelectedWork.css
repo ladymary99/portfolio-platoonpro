@@ -40,7 +40,6 @@
   overflow: hidden;
   border: 1px solid #94a3b849;
   transition: transform 0.3s ease;
-  cursor: none;
 }
 
 .mockup-container {
@@ -96,7 +95,7 @@ span {
   transition: all 0.3s ease;
 }
 
-.custom-cursor {
+/* .custom-cursor {
   position: absolute;
   top: 0;
   left: 0;
@@ -116,7 +115,7 @@ span {
 
 .mockup-container:hover .custom-cursor {
   opacity: 1;
-}
+} */
 .more-btn-wrapper {
   text-align: center;
   margin-top: 40px;
