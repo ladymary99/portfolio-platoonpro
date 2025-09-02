@@ -34,7 +34,7 @@ const PortfolioSection = () => {
     },
     {
       id: 3,
-      title: "Restaurant",
+      title: "Restaurante",
       tags: ["Figma", "Branding", "React"],
       mockupImage: myImage3,
       description: "DRINKS - About us, Our menu, Reservations, Contact us",
@@ -51,15 +51,15 @@ const PortfolioSection = () => {
   const morePortfolioItems = [
     {
       id: 5,
-      title: "Bakery Landing Page",
+      title: "Wine & Dine Landing Page",
       tags: ["UI/UX", "Figma"],
       mockupImage: myImage5,
       description: "Fresh Bread & Pastries",
     },
     {
       id: 6,
-      title: "Coffee Shop Website",
-      tags: ["React", "Tailwind"],
+      title: "LYON Franch Restauran",
+      tags: ["React", "Figma"],
       mockupImage: myImage6,
       description: "Order your favorite coffee online",
     },

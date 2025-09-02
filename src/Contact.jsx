@@ -1,9 +1,16 @@
-import React, { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import { InlineWidget } from "react-calendly";
 
 import "./Contact.css";
 
 const ContactWithCalendly = () => {
+  const [status, setStatus] = useState({
+    sending: false,
+    sent: false,
+    error: "",
+  });
+
   /* ---------- Calendly badge ---------- */
   useEffect(() => {
     const script = document.createElement("script");
@@ -78,8 +85,14 @@ const ContactWithCalendly = () => {
             Message
             <textarea name="message" rows={5} required />
           </label>
-          <button className="send-btn" type="submit">
-            <span>Submit</span>
+
+          {/* Inline feedback */}
+          {status.error && <p className="error-msg">{status.error}</p>}
+          {status.sent && (
+            <p className="success-msg">Message sent successfully!</p>
+          )}
+          <button className="send-btn" type="submit" disabled={status.sending}>
+            <span>{status.sending ? "SENDING.." : "Submit"}</span>
             <div className="cta-icon">
               <svg
                 width="16"

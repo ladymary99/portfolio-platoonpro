@@ -46,58 +46,58 @@ import the3 from "./assets/the4.png";
 import the4 from "./assets/the5.png";
 import the5 from "./assets/the6.png";
 
-import videoSample from "./assets/v2.mp4";
+// import videoSample from "./assets/v2.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const imageData = [
   {
     src: b1Image,
-    title: "Branding Project",
-    desc: "We developed a stunning branding experience with rich visuals, detailed identity work, and a multi-platform presentation.",
+    title: "DONDE ENCARNA",
+    desc: "Creative branding for DONDE ENCARNA, capturing its unique identity and culinary experience through logo, visuals, and design elements.",
     col1: [brand1, brand2, brand3],
     col2: [brand4, b1Image],
-    video: videoSample,
+    video: b1Image,
   },
   {
     src: b2Image,
-    title: "VONA Branding",
-    desc: "Elegant and minimalistic design for a premium skincare brand.",
+    title: "VONA Restaurant",
+    desc: "Distinctive branding for VONA, showcasing its identity and culinary vibe through thoughtful design and visuals.",
     col1: [vona, vona2, vona3],
     col2: [vona4, vona5],
-    video: videoSample,
+    video: b2Image,
   },
   {
     src: b3Image,
-    title: "Creative Campaign",
-    desc: "A bold and colorful approach to brand storytelling.",
+    title: "NOSTRUM",
+    desc: "Elegant and memorable branding for NOSTRUM, highlighting its unique identity and dining experience through cohesive design and visuals.",
     col1: [no1, no2, no3],
     col2: [no4, no5],
-    video: videoSample,
+    video: b3Image,
   },
   {
     src: b4Image,
-    title: "Fashion Identity",
-    desc: "A modern and sleek visual identity for a fashion startup.",
+    title: "CIACNBO",
+    desc: "Creative branding for CIACNBO, reflecting its unique identity and culinary experience through engaging visuals and design elements.",
     col1: [ciaco1, ciaco2, ciaco3],
     col2: [ciaco4, ciaco5],
-    video: videoSample,
+    video: b4Image,
   },
   {
     src: b5Image,
-    title: "Product Packaging",
-    desc: "Eye-catching packaging design that makes your product pop off the shelf.",
+    title: "JUNE",
+    desc: "Fresh and modern branding for JUNE, capturing its unique culinary identity through cohesive visuals and design.",
     col1: [june1, june2, june3, june4],
     col2: [june5],
-    video: videoSample,
+    video: b5Image,
   },
   {
     src: b6Image,
-    title: "Event Branding",
-    desc: "Immersive branding for unforgettable experiences.",
+    title: "The Qahwa",
+    desc: "Inviting and memorable branding for The Qahwa, a coffee shop, highlighting its warm atmosphere and unique coffee experience through thoughtful visuals and design.",
     col1: [the1, the2, the3],
     col2: [the4, the5],
-    video: videoSample,
+    video: b6Image,
   },
 ];
 

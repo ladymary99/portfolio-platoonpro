@@ -102,7 +102,7 @@ export default function Hero() {
 
         {/* RIGHT COLUMN */}
         <div className="right-col" ref={rightRef}>
-          <h1>We Make your restaurant online</h1>
+          <h1>Turning restaurants into experiences online</h1>
           <p>
             Elevating restaurant brands through elegant design, powerful
             storytelling, and digital experiences that leave a lasting
