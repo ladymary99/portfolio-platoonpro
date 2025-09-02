@@ -35,6 +35,7 @@ const ContactWithCalendly = () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
+      setStatus({ sending: true, sent: false, error: "" });
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -42,16 +43,18 @@ const ContactWithCalendly = () => {
       });
 
       if (!res.ok) {
-        const err = await res.json();
-        alert("Error: " + (err.errors?.[0]?.msg || "Something went wrong"));
-        return;
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.errors?.[0]?.msg || "Something went wrong");
       }
 
-      alert("✅ Message sent successfully!");
+      setStatus({ sending: false, sent: true, error: "" });
       e.target.reset();
     } catch (err) {
-      console.error(err);
-      alert("❌ Failed to send message. Try again later.");
+      setStatus({
+        sending: false,
+        sent: false,
+        error: err.message || "Failed to send message.",
+      });
     }
   };
 
