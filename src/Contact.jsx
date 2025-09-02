@@ -29,12 +29,30 @@ const ContactWithCalendly = () => {
   }, []);
 
   /* ---------- Contact form ---------- */
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    console.log(data); // <-- swap with your API call
-    alert("Message sent (check console)!");
+
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        alert("Error: " + (err.errors?.[0]?.msg || "Something went wrong"));
+        return;
+      }
+
+      alert("✅ Message sent successfully!");
+      e.target.reset();
+    } catch (err) {
+      console.error(err);
+      alert("❌ Failed to send message. Try again later.");
+    }
   };
 
   return (

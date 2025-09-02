@@ -5,8 +5,8 @@ import myImage1 from "./assets/website1.png";
 import myImage2 from "./assets/website2.png";
 import myImage3 from "./assets/website3.png";
 import myImage4 from "./assets/design4.jpg";
-import myImage5 from "./assets/website3.png";
-import myImage6 from "./assets/website2.png";
+import myImage5 from "./assets/website5.jpg";
+import myImage6 from "./assets/website6.jpg";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

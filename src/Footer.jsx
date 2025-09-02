@@ -4,37 +4,40 @@ import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
 import Magnet from "./Magnet";
 
 const Footer = () => {
-  const [form, setForm] = useState({ name: "", message: "" });
+  const [email, setEmail] = useState("");
   const [status, setStatus] = useState({
     sending: false,
     sent: false,
     error: "",
   });
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setForm((f) => ({ ...f, [name]: value }));
-    if (status.error) setStatus((s) => ({ ...s, error: "" }));
-  }
-
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!form.name.trim() || !form.message.trim()) {
-      setStatus({ ...status, error: "Please fill out both fields." });
+    if (!email.trim()) {
+      setStatus({ ...status, error: "Please enter your email." });
       return;
     }
 
     try {
       setStatus({ sending: true, sent: false, error: "" });
-      // Replace with your API call
-      await new Promise((res) => setTimeout(res, 1000));
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "footer" }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.errors?.[0]?.msg || "Failed to subscribe");
+      }
+
       setStatus({ sending: false, sent: true, error: "" });
-      setForm({ name: "", message: "" });
-    } catch {
+      setEmail("");
+    } catch (err) {
       setStatus({
         sending: false,
         sent: false,
-        error: "Something went wrong.",
+        error: err.message || "Something went wrong.",
       });
     }
   }
@@ -58,29 +61,19 @@ const Footer = () => {
             {/* Contact Form */}
             <form className="footer-form" onSubmit={handleSubmit}>
               <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={form.name}
-                onChange={handleChange}
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 disabled={status.sending}
                 required
               />
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                rows="4"
-                value={form.message}
-                onChange={handleChange}
-                disabled={status.sending}
-                required
-              ></textarea>
 
               {status.error && <p className="error-msg">{status.error}</p>}
               {status.sent && (
-                <p className="success-msg">Message sent successfully!</p>
+                <p className="success-msg">Subscribed successfully!</p>
               )}
-
               <Magnet
                 padding={100}
                 magnetStrength={2}
@@ -94,7 +87,8 @@ const Footer = () => {
                   type="submit"
                   disabled={status.sending}
                 >
-                  <span>{status.sending ? "SENDING..." : "GET IN TOUCH"}</span>
+                  <span>{status.sending ? "SENDING..." : "SUBSCRIBE"}</span>
+
                   <svg
                     width="20"
                     height="20"
