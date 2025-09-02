@@ -32,19 +32,18 @@
 }
 
 .get-in-touch-btn {
+  margin-top: 30px;
   background: #020c1b;
   border: none;
   padding: 14px 50px;
   border-radius: 30px;
   color: white;
   font-size: 2rem;
-
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 2px;
   transition: transform 0.2s ease;
-
   font-family: "Getai Grotesk", sans-serif;
 }
 
